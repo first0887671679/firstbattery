@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Prompt, Sarabun } from "next/font/google";
-import { GoogleTagManager } from '@next/third-parties/google'
+import Script from 'next/script'
 import { SITE_CONFIG, generateLocalBusinessJsonLd, generateWebSiteJsonLd } from "@/lib/seo";
 import { prisma } from "@/lib/prisma";
 import DynamicNavbar from "@/components/DynamicNavbar";
@@ -150,11 +150,21 @@ export default async function RootLayout({
         <link rel="dns-prefetch" href="https://images.unsplash.com" />
         <link rel="dns-prefetch" href="https://i.pravatar.cc" />
         <link rel="dns-prefetch" href="https://res.cloudinary.com" />
-        <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_ID || 'GTM-XXXXXXX'} />
+        <Script id="gtm-head" strategy="afterInteractive">
+          {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','GTM-WV4QJSQM');`}
+        </Script>
       </head>
       <body
         className={`${prompt.variable} ${sarabun.variable} antialiased overflow-x-hidden w-full flex flex-col min-h-screen`}
       >
+        <noscript>
+          <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WV4QJSQM"
+            height="0" width="0" style={{ display: 'none', visibility: 'hidden' }}></iframe>
+        </noscript>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
@@ -373,8 +383,6 @@ export default async function RootLayout({
         >
           {children}
         </ClientShell>
-        {/* TODO: ใส่ GTM ID จริงของคุณ แล้วเปิดใช้งาน */}
-        {/* <GoogleTagManager gtmId="GTM-XXXXXXX" /> */}
       </body>
     </html>
   );
