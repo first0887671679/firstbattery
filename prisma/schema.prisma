@@ -4,9 +4,9 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
-}postgresql
+}
 
 model AdminUser {
   id        String   @id @default(cuid())
