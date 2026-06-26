@@ -31,6 +31,20 @@ const REPLACEMENTS = [
   ["ศรีนครินทร์ เทพารักษ์ แพรกษา", "ห้วยขวาง ดินแดง ลาดพร้าว"],
   ["บางนา ศรีนครินทร์", "ห้วยขวาง ดินแดง"],
   ["โซนบางนา", "โซนห้วยขวาง"],
+  // Additional old area patterns found in production DB
+  ["สุขุมวิทตอนปลาย, บางนา, แบริ่ง, ลาซาล และโซนสมุทรปราการ", "ห้วยขวาง, ดินแดง, ลาดพร้าว, บางกะปิ, บางเขน, จตุจักร, ดุสิต, บางซื่อ"],
+  ["ศรีนครินทร์, เทพารักษ์, แพรกษา, วัดด่านสำโรง, วัดหนามแดง", "ห้วยขวาง, ดินแดง, ลาดพร้าว, บางกะปิ, บางเขน, จตุจักร, ดุสิต, บางซื่อ"],
+  ["สุขุมวิทตอนปลาย", "ห้วยขวาง"],
+  ["สมุทรปราการ", "บางกะปิ"],
+  ["บางนา", "ห้วยขวาง"],
+  ["ศรีนครินทร์", "ดินแดง"],
+  ["แบริ่ง", "ลาดพร้าว"],
+  ["ลาซาล", "บางกะปิ"],
+  ["เทพารักษ์", "บางเขน"],
+  ["แพรกษา", "จตุจักร"],
+  ["วัดด่านสำโรง", "ดุสิต"],
+  ["วัดหนามแดง", "บางซื่อ"],
+  ["สำโรง", "ดุสิต"],
 ];
 
 async function migrate() {
@@ -327,6 +341,82 @@ async function migrate() {
 
       console.log("[prebuild-migrate] Force-set home page critical sections ✓");
     }
+
+    // ── 4b. Force-update ALL service pages with correct areas ──
+    const SERVICE_SLUGS = [
+      "battery-replacement",
+      "mobile-tire-repair",
+      "alternator-starter",
+      "car-polishing",
+      "contact-us",
+    ];
+    const NEW_AREAS = ["ห้วยขวาง", "ดินแดง", "ลาดพร้าว", "บางกะปิ", "บางเขน", "จตุจักร", "ดุสิต", "บางซื่อ"];
+    const NEW_AREAS_DESC = "ครอบคลุมโซนกรุงเทพฯ: ห้วยขวาง, ดินแดง, ลาดพร้าว, บางกะปิ, บางเขน, จตุจักร, ดุสิต, บางซื่อ";
+
+    for (const slug of SERVICE_SLUGS) {
+      try {
+        const svcPage = await prisma.page.findUnique({
+          where: { slug },
+          include: { sections: true },
+        });
+        if (!svcPage) continue;
+
+        // Update page SEO fields
+        const pageFields = ["seoTitle", "seoDescription", "seoKeywords"];
+        let pageData = {};
+        let pageChanged = false;
+        for (const field of pageFields) {
+          let val = svcPage[field] || "";
+          for (const [from, to] of REPLACEMENTS) {
+            if (val.includes(from)) {
+              val = val.replaceAll(from, to);
+              pageChanged = true;
+            }
+          }
+          pageData[field] = val;
+        }
+        if (pageChanged) {
+          await prisma.page.update({ where: { id: svcPage.id }, data: pageData });
+        }
+
+        // Update sections
+        for (const section of svcPage.sections) {
+          let content = section.content || "";
+          let title = section.title || "";
+          let changed = false;
+
+          for (const [from, to] of REPLACEMENTS) {
+            if (content.includes(from)) {
+              content = content.replaceAll(from, to);
+              changed = true;
+            }
+            if (title.includes(from)) {
+              title = title.replaceAll(from, to);
+              changed = true;
+            }
+          }
+
+          // Force-update areas section
+          if (section.type === "areas") {
+            const d = safeJson(content);
+            d.areas = NEW_AREAS;
+            d.description = NEW_AREAS_DESC;
+            content = JSON.stringify(d);
+            changed = true;
+          }
+
+          if (changed) {
+            await prisma.pageSection.update({
+              where: { id: section.id },
+              data: { content, title },
+            });
+          }
+        }
+      } catch (e) {
+        console.error(`[prebuild-migrate] Error updating service page ${slug}:`, e.message);
+      }
+    }
+    console.log("[prebuild-migrate] Force-updated all service pages ✓");
 
     // ── 5. Force-set posts page sections ──
     const postsPage = await prisma.page.findUnique({
