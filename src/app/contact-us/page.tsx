@@ -1,4 +1,5 @@
 ﻿import { Metadata } from "next";
+import { notFound } from "next/navigation";
 import { SITE_CONFIG, generateBreadcrumbJsonLd, generateWebPageJsonLd } from "@/lib/seo";
 import { ensureServicePages, getServicePageData } from "@/lib/ensureServicePages";
 import ServicePageRenderer from "@/components/ServicePageRenderer";
@@ -106,6 +107,7 @@ function generateContactPageJsonLd() {
 export default async function ContactUsPage() {
   await ensureServicePages();
   const page = await getServicePageData(SLUG);
+  if (!page) notFound();
   const PAGE_TITLE = page?.seoTitle || FALLBACK_TITLE;
   const PAGE_DESC = page?.seoDescription || FALLBACK_DESC;
 

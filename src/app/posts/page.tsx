@@ -23,7 +23,7 @@ export const dynamic = "force-dynamic";
 export async function generateMetadata(): Promise<Metadata> {
   let postsPage = null;
   try {
-    postsPage = await (prisma as any).page.findUnique({ where: { slug: "posts" } });
+    postsPage = await (prisma as any).page.findUnique({ where: { slug: "posts", isActive: true } });
   } catch {
     // DB unreachable during build
   }
@@ -484,7 +484,7 @@ export default async function PostsPage() {
   let posts: any[] = [];
   try {
     postsPage = await (prisma as any).page.findUnique({
-      where: { slug: "posts" },
+      where: { slug: "posts", isActive: true },
       include: { sections: { where: { isActive: true }, orderBy: { order: "asc" } } },
     });
     posts = await (prisma as any).post.findMany({

@@ -607,7 +607,7 @@ async function _doEnsure() {
 export async function getServicePageData(slug: string) {
   try {
     return await (prisma as any).page.findUnique({
-      where: { slug },
+      where: { slug, isActive: true },
       include: { sections: { where: { isActive: true }, orderBy: { order: "asc" } } },
     });
   } catch {

@@ -122,15 +122,25 @@ export default async function RootLayout({
 }>) {
   // Fetch global header/footer from home page sections
   let homePage = null;
+  let allPages: any[] = [];
   try {
     homePage = await (prisma as any).page.findUnique({
       where: { slug: "home" },
       include: { sections: { where: { isActive: true }, orderBy: { order: "asc" } } },
     });
+    // Fetch all pages to filter navbar links by isActive
+    allPages = await (prisma as any).page.findMany({
+      select: { slug: true, isActive: true },
+    });
   } catch {
     // DB unreachable during build — render with fallbacks
   }
   const sections = homePage?.sections || [];
+
+  // Build a Set of inactive page slugs for quick lookup
+  const inactiveSlugs = new Set(
+    allPages.filter((p: any) => !p.isActive).map((p: any) => p.slug)
+  );
 
   // Find header and footer sections
   const headerSection = sections.find((s: any) => s.type === "header");
@@ -138,6 +148,32 @@ export default async function RootLayout({
 
   const headerData = headerSection ? parseJson(headerSection.content) : {};
   const footerData = footerSection ? parseJson(footerSection.content) : {};
+
+  // Filter navbar links: remove links to inactive pages
+  const rawLinks: any[] = Array.isArray(headerData.links) ? headerData.links : [];
+  const filteredLinks = rawLinks
+    .map((link: any) => {
+      // If the link has children (dropdown), filter children too
+      if (Array.isArray(link.children)) {
+        const filteredChildren = link.children.filter((child: any) => {
+          const slug = child.href?.replace(/^\//, "").replace(/\/$/, "");
+          if (!slug || slug === "#" || slug.startsWith("tel:") || slug.startsWith("http")) return true;
+          return !inactiveSlugs.has(slug);
+        });
+        // Keep parent only if it has visible children
+        if (filteredChildren.length === 0 && link.href && link.href !== "#") {
+          const parentSlug = link.href.replace(/^\//, "").replace(/\/$/, "");
+          if (inactiveSlugs.has(parentSlug)) return null;
+        }
+        return { ...link, children: filteredChildren };
+      }
+      // Flat link: check if corresponding page is inactive
+      const slug = link.href?.replace(/^\//, "").replace(/\/$/, "");
+      if (!slug || slug === "#" || slug.startsWith("tel:") || slug.startsWith("http")) return link;
+      if (inactiveSlugs.has(slug)) return null;
+      return link;
+    })
+    .filter(Boolean);
 
   const localBusinessJsonLd = generateLocalBusinessJsonLd();
   const webSiteJsonLd = generateWebSiteJsonLd();
@@ -185,7 +221,7 @@ export default async function RootLayout({
                 phoneLabel={headerData.phoneLabel || "โทรด่วน"}
                 lineUrl={headerData.lineUrl || "https://lin.ee/OBB86S4"}
                 lineLabel={headerData.lineLabel || "Line"}
-                links={Array.isArray(headerData.links) ? headerData.links : []}
+                links={filteredLinks}
                 logoSize={headerData.logoSize || 44}
                 logoSizeMobile={headerData.logoSizeMobile || 32}
                 navbarHeight={headerData.navbarHeight || 64}

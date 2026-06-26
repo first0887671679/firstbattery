@@ -80,7 +80,7 @@ export default async function Home() {
   let homePage = null;
   try {
     homePage = await (prisma as any).page.findUnique({
-      where: { slug: "home" },
+      where: { slug: "home", isActive: true },
       include: { sections: { where: { isActive: true }, orderBy: { order: "asc" } } },
     });
   } catch {
