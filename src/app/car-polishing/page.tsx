@@ -3,7 +3,7 @@ import { SITE_CONFIG, generateBreadcrumbJsonLd, generateWebPageJsonLd, generateS
 import { ensureServicePages, getServicePageData } from "@/lib/ensureServicePages";
 import ServicePageRenderer from "@/components/ServicePageRenderer";
 
-export const revalidate = 60;
+export const dynamic = "force-dynamic";
 
 const SLUG = "car-polishing";
 const FALLBACK_TITLE = "รับขัดสีรถยนต์ ขัดไฟหน้านอกสถานที่ ถึงบ้านคุณ ห้วยขวาง ดินแดง ลาดพร้าว";

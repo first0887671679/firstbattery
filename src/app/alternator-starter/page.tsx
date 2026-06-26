@@ -3,7 +3,7 @@ import { SITE_CONFIG, generateBreadcrumbJsonLd, generateWebPageJsonLd, generateS
 import { ensureServicePages, getServicePageData } from "@/lib/ensureServicePages";
 import ServicePageRenderer from "@/components/ServicePageRenderer";
 
-export const revalidate = 60;
+export const dynamic = "force-dynamic";
 
 const SLUG = "alternator-starter";
 const FALLBACK_TITLE = "ซ่อมเปลี่ยนไดชาร์จ ไดสตาร์ท นอกสถานที่ ห้วยขวาง ดินแดง ลาดพร้าว";

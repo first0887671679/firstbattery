@@ -3,7 +3,7 @@ import { SITE_CONFIG, generateBreadcrumbJsonLd, generateWebPageJsonLd, generateS
 import { ensureServicePages, getServicePageData } from "@/lib/ensureServicePages";
 import ServicePageRenderer from "@/components/ServicePageRenderer";
 
-export const revalidate = 60;
+export const dynamic = "force-dynamic";
 
 const SLUG = "battery-replacement";
 const FALLBACK_TITLE = "ร้านแบตเตอรี่รถยนต์ นอกสถานที่ ห้วยขวาง ดินแดง ลาดพร้าว เปลี่ยนแบตด่วน";

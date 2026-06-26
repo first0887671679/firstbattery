@@ -8,7 +8,7 @@ import StickyBottomBar from "@/components/StickyBottomBar";
 import ClientShell from "@/components/ClientShell";
 import "./globals.css";
 
-export const revalidate = 60;
+export const dynamic = "force-dynamic";
 
 const prompt = Prompt({
   variable: "--font-prompt",

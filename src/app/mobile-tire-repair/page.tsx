@@ -3,7 +3,7 @@ import { SITE_CONFIG, generateBreadcrumbJsonLd, generateWebPageJsonLd, generateS
 import { ensureServicePages, getServicePageData } from "@/lib/ensureServicePages";
 import ServicePageRenderer from "@/components/ServicePageRenderer";
 
-export const revalidate = 60;
+export const dynamic = "force-dynamic";
 
 const SLUG = "mobile-tire-repair";
 const FALLBACK_TITLE = "ปะยางนอกสถานที่ 24 ชม. ห้วยขวาง ดินแดง ลาดพร้าว ถึงไว ด่วนทันใจ";

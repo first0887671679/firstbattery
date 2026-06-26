@@ -10,15 +10,15 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import dynamic from "next/dynamic";
+import nextDynamic from "next/dynamic";
 import Showcase from "@/components/Showcase";
 import Testimonials from "@/components/Testimonials";
 
-const HeroSlider = dynamic(() => import("@/components/HeroSlider"));
-const BatteryChecker = dynamic(() => import("@/components/BatteryChecker"));
-const AnimateOnScroll = dynamic(() => import("@/components/AnimateOnScroll"));
+const HeroSlider = nextDynamic(() => import("@/components/HeroSlider"));
+const BatteryChecker = nextDynamic(() => import("@/components/BatteryChecker"));
+const AnimateOnScroll = nextDynamic(() => import("@/components/AnimateOnScroll"));
 
-export const revalidate = 60;
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "PORNPISIT BATTERY | เปลี่ยนแบตเตอรี่รถยนต์นอกสถานที่ 24 ชม.",
