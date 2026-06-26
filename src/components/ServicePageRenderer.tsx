@@ -2,7 +2,6 @@
 import Image from "next/image";
 import { PhoneCall, MessageCircle, Clock, Shield, CheckCircle, AlertTriangle, Wrench, Zap, MapPin, Phone, Facebook, Navigation, CalendarDays, Camera, Sparkles, Sun, Battery } from "lucide-react";
 import { SITE_CONFIG } from "@/lib/seo";
-import ServiceCrossLinks from "@/components/ServiceCrossLinks";
 
 /* ─── Icon mapping from string → component ─── */
 const ICON_MAP: Record<string, React.ReactNode> = {
@@ -79,7 +78,6 @@ export default function ServicePageRenderer({ sections, slug, breadcrumbLabel }:
         return null;
       })}
 
-      <ServiceCrossLinks currentSlug={slug} />
       <div className="h-20 md:h-0" />
     </div>
   );
