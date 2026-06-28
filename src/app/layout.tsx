@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { cache } from "react";
 import { Prompt, Sarabun } from "next/font/google";
 import Script from 'next/script'
 import { SITE_CONFIG, generateLocalBusinessJsonLd, generateWebSiteJsonLd } from "@/lib/seo";
@@ -8,7 +9,7 @@ import StickyBottomBar from "@/components/StickyBottomBar";
 import ClientShell from "@/components/ClientShell";
 import "./globals.css";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 60;
 
 const prompt = Prompt({
   variable: "--font-prompt",
@@ -31,7 +32,7 @@ export const viewport: Viewport = {
   themeColor: "#dc2626",
 };
 
-async function getSiteSettings() {
+const getSiteSettings = cache(async () => {
   try {
     const settings = await (prisma as any).siteSettings.findUnique({
       where: { id: "singleton" },
@@ -40,7 +41,7 @@ async function getSiteSettings() {
   } catch {
     return { allowGoogleIndex: true, allowAiCrawl: true };
   }
-}
+});
 
 export async function generateMetadata(): Promise<Metadata> {
   const settings = await getSiteSettings();
@@ -115,26 +116,29 @@ function parseJson(str: string): Record<string, any> {
   try { return JSON.parse(str); } catch { return {}; }
 }
 
+// Cached DB queries — deduplicated across the same render pass
+const getHomePageData = cache(async () => {
+  try {
+    const homePage = await (prisma as any).page.findUnique({
+      where: { slug: "home" },
+      include: { sections: { where: { isActive: true }, orderBy: { order: "asc" } } },
+    });
+    const allPages = await (prisma as any).page.findMany({
+      select: { slug: true, isActive: true },
+    });
+    return { homePage, allPages };
+  } catch {
+    return { homePage: null, allPages: [] };
+  }
+});
+
 export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  // Fetch global header/footer from home page sections
-  let homePage = null;
-  let allPages: any[] = [];
-  try {
-    homePage = await (prisma as any).page.findUnique({
-      where: { slug: "home" },
-      include: { sections: { where: { isActive: true }, orderBy: { order: "asc" } } },
-    });
-    // Fetch all pages to filter navbar links by isActive
-    allPages = await (prisma as any).page.findMany({
-      select: { slug: true, isActive: true },
-    });
-  } catch {
-    // DB unreachable during build — render with fallbacks
-  }
+  // Fetch global header/footer from home page sections (cached per render)
+  const { homePage, allPages } = await getHomePageData();
   const sections = homePage?.sections || [];
 
   // Build a Set of inactive page slugs for quick lookup

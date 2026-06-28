@@ -18,7 +18,7 @@ const HeroSlider = nextDynamic(() => import("@/components/HeroSlider"));
 const BatteryChecker = nextDynamic(() => import("@/components/BatteryChecker"));
 const AnimateOnScroll = nextDynamic(() => import("@/components/AnimateOnScroll"));
 
-export const dynamic = "force-dynamic";
+export const revalidate = 60;
 
 export const metadata: Metadata = {
   title: "PORNPISIT BATTERY | เปลี่ยนแบตเตอรี่รถยนต์นอกสถานที่ 24 ชม.",

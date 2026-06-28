@@ -85,6 +85,10 @@ const nextConfig: NextConfig = {
         source: "/((?!admin/).*)",
         headers: [
           {
+            key: "Cache-Control",
+            value: "public, max-age=60, stale-while-revalidate=300",
+          },
+          {
             key: "X-Content-Type-Options",
             value: "nosniff",
           },

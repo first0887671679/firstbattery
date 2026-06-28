@@ -18,7 +18,7 @@ import StickyBottomBar from "@/components/StickyBottomBar";
 import Showcase from "@/components/Showcase";
 import Testimonials from "@/components/Testimonials";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 60;
 
 export async function generateMetadata(): Promise<Metadata> {
   let postsPage = null;

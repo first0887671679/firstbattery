@@ -41,9 +41,5 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: [
-    "/admin/:path*",
-    // Match หน้าหลักสำหรับ social bot detection (ไม่รวม api, _next, static)
-    "/((?!api/|_next/static|_next/image|favicon.ico).*)",
-  ],
+  matcher: ["/admin/:path*"],
 };
