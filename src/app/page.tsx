@@ -171,18 +171,18 @@ export default async function Home() {
           ];
 
       return (
-        <section key={section.id} id="services" className="relative overflow-hidden bg-neutral-950 py-20 md:py-32 px-4">
+        <section key={section.id} id="services" className="relative overflow-hidden bg-white py-20 md:py-32 px-4">
           {/* Background */}
           <div className="absolute inset-0 pointer-events-none">
-            <div className="absolute top-0 left-1/4 w-[700px] h-[700px] bg-red-600/[0.05] rounded-full blur-3xl -translate-x-1/2" />
-            <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-red-500/[0.03] rounded-full blur-3xl" />
-            <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.015)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.015)_1px,transparent_1px)] bg-[size:48px_48px]" />
+            <div className="absolute top-0 left-1/4 w-[700px] h-[700px] bg-red-600/[0.06] rounded-full blur-3xl -translate-x-1/2" />
+            <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-red-500/[0.04] rounded-full blur-3xl" />
+            <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.02)_1px,transparent_1px)] bg-[size:48px_48px]" />
           </div>
 
           <div className="max-w-7xl mx-auto relative z-10">
             {/* ── Badge ── */}
             <div className="flex justify-center mb-10 md:mb-14">
-              <div className="inline-flex items-center gap-2.5 bg-red-600/10 border border-red-500/20 text-red-400 text-[11px] font-bold px-5 py-2 rounded-full tracking-[0.2em] uppercase">
+              <div className="inline-flex items-center gap-2.5 bg-red-50 border border-red-200 text-red-600 text-[11px] font-bold px-5 py-2 rounded-full tracking-[0.2em] uppercase">
                 <BatteryCharging className="w-3.5 h-3.5" />
                 บริการของเรา
               </div>
@@ -192,11 +192,11 @@ export default async function Home() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 items-center mb-16 md:mb-24">
               {/* Left — Text */}
               <div>
-                <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-white leading-[1.05] tracking-tight mb-5">
+                <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-slate-900 leading-[1.05] tracking-tight mb-5">
                   {section.title || "เปลี่ยนแบตเตอรี่"}
-                  <span className="block text-red-500 mt-1">{data.subtitle || "นอกสถานที่ ถึงที่คุณ"}</span>
+                  <span className="block text-red-600 mt-1">{data.subtitle || "นอกสถานที่ ถึงที่คุณ"}</span>
                 </h2>
-                <p className="text-neutral-400 text-base md:text-lg leading-relaxed mb-8 max-w-lg">
+                <p className="text-slate-600 text-base md:text-lg leading-relaxed mb-8 max-w-lg">
                   {data.description || "ไม่ต้องลากรถ ไม่ต้องหาอู่ เพียงโทรหาเรา ช่างจะออกไปเปลี่ยนแบตเตอรี่ให้ถึงที่คุณทันที ไม่ว่าจะเป็นที่บ้าน ที่ทำงาน หรือกลางถนน"}
                 </p>
 
@@ -204,10 +204,10 @@ export default async function Home() {
                 <ul className="space-y-3 mb-10">
                   {benefits.map((benefit, i) => (
                     <li key={i} className="flex items-start gap-3">
-                      <div className="flex-shrink-0 w-6 h-6 rounded-full bg-red-600/15 border border-red-500/30 flex items-center justify-center mt-0.5">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-red-400" />
+                      <div className="flex-shrink-0 w-6 h-6 rounded-full bg-red-100 border border-red-200 flex items-center justify-center mt-0.5">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-red-600" />
                       </div>
-                      <span className="text-neutral-300 text-sm md:text-base leading-snug">{benefit}</span>
+                      <span className="text-slate-700 text-sm md:text-base leading-snug">{benefit}</span>
                     </li>
                   ))}
                 </ul>
@@ -229,21 +229,21 @@ export default async function Home() {
               <div className="relative">
                 {/* Outer glow */}
                 <div className="absolute inset-0 bg-red-600/10 rounded-3xl blur-2xl scale-110" />
-                <div className="relative bg-black border border-neutral-800/60 rounded-3xl p-8 md:p-10 overflow-hidden hover:border-red-500/30 transition-colors duration-500">
+                <div className="relative bg-white border border-slate-200 rounded-3xl p-8 md:p-10 overflow-hidden hover:border-red-300 transition-colors duration-500 shadow-lg">
                   {/* Top accent line */}
-                  <div className="absolute top-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-red-500/50 to-transparent" />
+                  <div className="absolute top-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-red-300 to-transparent" />
 
                   {/* Big icon */}
                   <div className="flex justify-center mb-8">
-                    <div className="relative w-24 h-24 rounded-3xl bg-red-600/10 border border-red-500/20 flex items-center justify-center">
-                      <BatteryCharging className="w-12 h-12 text-red-500" />
+                    <div className="relative w-24 h-24 rounded-3xl bg-red-50 border border-red-200 flex items-center justify-center">
+                      <BatteryCharging className="w-12 h-12 text-red-600" />
                       <div className="absolute inset-0 rounded-3xl animate-pulse bg-red-600/5" />
                     </div>
                   </div>
 
                   {/* Service name */}
-                  <h3 className="text-center text-xl md:text-2xl font-black text-white mb-2">เปลี่ยนแบตเตอรี่รถยนต์</h3>
-                  <p className="text-center text-red-400 font-semibold text-sm mb-8">บริการนอกสถานที่ · 24 ชั่วโมง</p>
+                  <h3 className="text-center text-xl md:text-2xl font-black text-slate-900 mb-2">เปลี่ยนแบตเตอรี่รถยนต์</h3>
+                  <p className="text-center text-red-600 font-semibold text-sm mb-8">บริการนอกสถานที่ · 24 ชั่วโมง</p>
 
                   {/* Mini stats */}
                   <div className="grid grid-cols-2 gap-3">
@@ -253,36 +253,36 @@ export default async function Home() {
                       { value: "1,000+",  label: "คันที่บริการ", icon: <BatteryCharging className="w-4 h-4" /> },
                       { value: "1 ปี",    label: "รับประกัน",   icon: <BadgeCheck className="w-4 h-4" /> },
                     ].map((s) => (
-                      <div key={s.value} className="bg-neutral-900/80 border border-neutral-800/60 rounded-2xl p-4 text-center hover:border-red-500/30 transition-colors duration-300">
-                        <div className="flex justify-center mb-1.5 text-red-500">{s.icon}</div>
-                        <p className="text-xl font-black text-red-500 leading-none mb-1">{s.value}</p>
-                        <p className="text-neutral-500 text-[11px]">{s.label}</p>
+                      <div key={s.value} className="bg-slate-50 border border-slate-200 rounded-2xl p-4 text-center hover:border-red-300 transition-colors duration-300">
+                        <div className="flex justify-center mb-1.5 text-red-600">{s.icon}</div>
+                        <p className="text-xl font-black text-red-600 leading-none mb-1">{s.value}</p>
+                        <p className="text-slate-500 text-[11px]">{s.label}</p>
                       </div>
                     ))}
                   </div>
 
                   {/* Bottom accent */}
-                  <div className="absolute bottom-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-red-500/30 to-transparent" />
+                  <div className="absolute bottom-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-red-300 to-transparent" />
                 </div>
               </div>
             </div>
 
             {/* ── Service Areas ── */}
-            <div className="bg-black border border-neutral-800/50 rounded-2xl md:rounded-3xl p-7 md:p-10 text-center hover:border-red-500/20 transition-colors duration-300">
-              <div className="inline-flex items-center gap-2.5 bg-red-600/10 border border-red-500/20 text-red-400 text-[11px] font-bold px-5 py-2 rounded-full mb-5 tracking-[0.2em] uppercase">
+            <div className="bg-slate-50 border border-slate-200 rounded-2xl md:rounded-3xl p-7 md:p-10 text-center hover:border-red-300 transition-colors duration-300">
+              <div className="inline-flex items-center gap-2.5 bg-red-50 border border-red-200 text-red-600 text-[11px] font-bold px-5 py-2 rounded-full mb-5 tracking-[0.2em] uppercase">
                 <MapPin className="w-3.5 h-3.5" />
                 พื้นที่ให้บริการ
               </div>
-              <h3 className="text-2xl sm:text-3xl md:text-4xl font-black text-white mb-3 leading-tight">
-                ครอบคลุม<span className="text-red-400">ใจกลางกรุงเทพฯ</span>
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-black text-slate-900 mb-3 leading-tight">
+                ครอบคลุม<span className="text-red-600">ใจกลางกรุงเทพฯ</span>
               </h3>
-              <p className="text-neutral-400 text-sm md:text-base mb-6 max-w-xl mx-auto">
+              <p className="text-slate-600 text-sm md:text-base mb-6 max-w-xl mx-auto">
                 ช่างออกนอกสถานที่ได้ทุกจุดในเขตพื้นที่ด้านล่างนี้
               </p>
               <div className="flex flex-wrap justify-center gap-2 mb-8">
                 {["ห้วยขวาง", "ดินแดง", "ลาดพร้าว", "บางกะปิ", "บางเขน", "จตุจักร", "ดุสิต", "บางซื่อ"].map((area) => (
-                  <span key={area} className="bg-neutral-900 text-neutral-300 text-xs md:text-sm font-medium px-4 py-2 rounded-full border border-neutral-800 hover:border-red-500/40 hover:bg-red-600/5 hover:text-white transition-all duration-300 cursor-default">
-                    <MapPin className="w-3 h-3 inline-block mr-1.5 text-red-400" />{area}
+                  <span key={area} className="bg-white text-slate-700 text-xs md:text-sm font-medium px-4 py-2 rounded-full border border-slate-200 hover:border-red-400 hover:bg-red-50 hover:text-red-600 transition-all duration-300 cursor-default">
+                    <MapPin className="w-3 h-3 inline-block mr-1.5 text-red-500" />{area}
                   </span>
                 ))}
               </div>
@@ -305,20 +305,20 @@ export default async function Home() {
     /* ═══════ BATTERY CHECKER ═══════ */
     if (type === "battery-checker") {
       return (
-        <section key={section.id} className="relative overflow-hidden bg-black py-16 md:py-28 px-4">
-          <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.015)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.015)_1px,transparent_1px)] bg-[size:48px_48px]" />
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(220,38,38,0.04),transparent_70%)]" />
+        <section key={section.id} className="relative overflow-hidden bg-slate-50 py-16 md:py-28 px-4">
+          <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.02)_1px,transparent_1px)] bg-[size:48px_48px]" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(220,38,38,0.06),transparent_70%)]" />
           <div className="max-w-6xl mx-auto relative z-10">
             <div className="text-center mb-10 md:mb-14">
-              <div className="inline-flex items-center gap-2.5 bg-red-600/10 border border-red-500/20 text-red-400 text-[11px] font-bold px-5 py-2 rounded-full mb-5 tracking-[0.2em] uppercase">
+              <div className="inline-flex items-center gap-2.5 bg-red-50 border border-red-200 text-red-600 text-[11px] font-bold px-5 py-2 rounded-full mb-5 tracking-[0.2em] uppercase">
                 <Battery className="w-3.5 h-3.5" />
                 เช็ครุ่นแบต
               </div>
-              <h3 className="text-2xl sm:text-3xl md:text-5xl font-black text-white leading-tight mb-3">
+              <h3 className="text-2xl sm:text-3xl md:text-5xl font-black text-slate-900 leading-tight mb-3">
                 {data.heading || section.title || "แบตเตอรี่รุ่นไหน"}
-                <span className="block text-red-400">{data.subheading || "เหมาะกับรถคุณ?"}</span>
+                <span className="block text-red-600">{data.subheading || "เหมาะกับรถคุณ?"}</span>
               </h3>
-              <p className="text-neutral-400 text-sm md:text-base mt-2 max-w-xl mx-auto">
+              <p className="text-slate-600 text-sm md:text-base mt-2 max-w-xl mx-auto">
                 {data.description || "เลือกยี่ห้อและรุ่นรถเพื่อดูแบตเตอรี่ที่เหมาะสม พร้อมราคาโดยประมาณ"}
               </p>
             </div>
@@ -333,25 +333,25 @@ export default async function Home() {
       const ctaPhone = data.phone || phone;
       const ctaLineUrl = data.lineUrl || lineUrl;
       return (
-        <section key={section.id} className="relative overflow-hidden bg-black py-14 md:py-24 px-4">
+        <section key={section.id} className="relative overflow-hidden bg-white py-14 md:py-24 px-4">
           <div className="max-w-6xl mx-auto relative z-10">
-            <div className="relative rounded-3xl overflow-hidden border border-red-500/20 bg-gradient-to-br from-red-950/40 via-neutral-950 to-neutral-950">
+            <div className="relative rounded-3xl overflow-hidden border border-red-200 bg-gradient-to-br from-red-50 via-white to-slate-50 shadow-lg">
               {/* Glow effects */}
-              <div className="absolute top-0 right-0 w-80 h-80 bg-red-600/10 rounded-full blur-3xl translate-x-1/3 -translate-y-1/3" />
-              <div className="absolute bottom-0 left-0 w-60 h-60 bg-red-600/5 rounded-full blur-3xl -translate-x-1/3 translate-y-1/3" />
-              <div className="absolute inset-0 bg-[linear-gradient(rgba(220,38,38,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(220,38,38,0.03)_1px,transparent_1px)] bg-[size:32px_32px]" />
+              <div className="absolute top-0 right-0 w-80 h-80 bg-red-100/60 rounded-full blur-3xl translate-x-1/3 -translate-y-1/3" />
+              <div className="absolute bottom-0 left-0 w-60 h-60 bg-red-50/60 rounded-full blur-3xl -translate-x-1/3 translate-y-1/3" />
+              <div className="absolute inset-0 bg-[linear-gradient(rgba(220,38,38,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(220,38,38,0.04)_1px,transparent_1px)] bg-[size:32px_32px]" />
 
               <div className="relative z-10 px-6 py-10 md:px-12 md:py-14 flex flex-col md:flex-row items-center gap-8">
                 <div className="flex-1 text-center md:text-left">
-                  <div className="inline-flex items-center gap-2 bg-red-600/15 border border-red-500/25 text-red-300 text-xs font-bold px-4 py-1.5 rounded-full mb-4 tracking-wider uppercase">
+                  <div className="inline-flex items-center gap-2 bg-red-100 border border-red-200 text-red-700 text-xs font-bold px-4 py-1.5 rounded-full mb-4 tracking-wider uppercase">
                     <Zap className="w-3.5 h-3.5" />
                     {data.badge || "พร้อมออกให้บริการทันที"}
                   </div>
-                  <h3 className="text-2xl sm:text-3xl md:text-4xl font-black text-white leading-tight mb-3">
+                  <h3 className="text-2xl sm:text-3xl md:text-4xl font-black text-slate-900 leading-tight mb-3">
                     {data.heading || "แบตหมด? อย่ารอช้า —"}<br className="hidden sm:block" />
-                    <span className="text-red-400"> {data.headingSub || "โทรหาเราได้ทันที"}</span>
+                    <span className="text-red-600"> {data.headingSub || "โทรหาเราได้ทันที"}</span>
                   </h3>
-                  <p className="text-neutral-400 text-sm md:text-base leading-relaxed mb-4">
+                  <p className="text-slate-600 text-sm md:text-base leading-relaxed mb-4">
                     {data.description || "ช่างผู้เชี่ยวชาญออกนอกสถานที่ภายใน 30 นาที · บริการ 24 ชั่วโมง"}
                   </p>
                   <div className="flex flex-wrap justify-center md:justify-start gap-2">
@@ -360,7 +360,7 @@ export default async function Home() {
                       "✓ ช่างมีประสบการณ์",
                       "✓ ราคาโปร่งใส",
                     ]).map((badge: string) => (
-                      <span key={badge} className="text-xs text-neutral-400 bg-neutral-900/80 border border-neutral-800 px-3 py-1.5 rounded-full">
+                      <span key={badge} className="text-xs text-slate-700 bg-slate-100 border border-slate-200 px-3 py-1.5 rounded-full">
                         {badge}
                       </span>
                     ))}
@@ -454,30 +454,30 @@ export default async function Home() {
     if (type === "faq") {
       const items = Array.isArray(data.items) ? data.items : [];
       return (
-        <section key={section.id} id="faq" className="py-20 md:py-32 px-4 bg-neutral-950 relative overflow-hidden">
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(220,38,38,0.03),transparent_70%)]" />
+        <section key={section.id} id="faq" className="py-20 md:py-32 px-4 bg-white relative overflow-hidden">
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(220,38,38,0.05),transparent_70%)]" />
           <div className="max-w-3xl mx-auto relative z-10">
             <div className="text-center mb-10 md:mb-16">
-              <div className="inline-flex items-center gap-2.5 bg-red-600/10 border border-red-500/20 text-red-400 text-[11px] font-bold px-5 py-2 rounded-full mb-5 tracking-[0.2em] uppercase">
+              <div className="inline-flex items-center gap-2.5 bg-red-50 border border-red-200 text-red-600 text-[11px] font-bold px-5 py-2 rounded-full mb-5 tracking-[0.2em] uppercase">
                 FAQ
               </div>
-              <h2 className="text-3xl sm:text-4xl md:text-6xl font-black text-white mb-4 px-2 leading-[1.1] tracking-tight">
+              <h2 className="text-3xl sm:text-4xl md:text-6xl font-black text-slate-900 mb-4 px-2 leading-[1.1] tracking-tight">
                 {section.title || "คำถามที่พบบ่อย"}
               </h2>
-              <p className="text-neutral-400 max-w-xl mx-auto text-sm md:text-base px-2">
+              <p className="text-slate-600 max-w-xl mx-auto text-sm md:text-base px-2">
                 {data.subtitle || "ข้อสงสัยเกี่ยวกับบริการเปลี่ยนแบตเตอรี่นอกสถานที่"}
               </p>
             </div>
             <div className="space-y-3">
               {items.map((faq: any, idx: number) => (
-                <details key={idx} className="group bg-neutral-900/80 rounded-2xl border border-neutral-800/60 hover:border-red-500/30 overflow-hidden transition-all duration-300 hover:shadow-[0_4px_20px_-6px_rgba(220,38,38,0.1)]">
-                  <summary className="flex items-center justify-between cursor-pointer p-5 md:p-6 font-semibold text-white hover:text-red-400 transition-colors select-none list-none text-sm md:text-base">
+                <details key={idx} className="group bg-white rounded-2xl border border-slate-200 hover:border-red-300 overflow-hidden transition-all duration-300 hover:shadow-md">
+                  <summary className="flex items-center justify-between cursor-pointer p-5 md:p-6 font-semibold text-slate-900 hover:text-red-600 transition-colors select-none list-none text-sm md:text-base">
                     <span className="pr-4">{faq.question}</span>
-                    <div className="flex-shrink-0 w-8 h-8 rounded-xl bg-red-600/10 group-open:bg-red-600 flex items-center justify-center transition-all duration-300">
-                      <svg className="w-4 h-4 text-red-400 group-open:text-white group-open:rotate-45 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 4v16m8-8H4" /></svg>
+                    <div className="flex-shrink-0 w-8 h-8 rounded-xl bg-red-50 group-open:bg-red-600 flex items-center justify-center transition-all duration-300">
+                      <svg className="w-4 h-4 text-red-600 group-open:text-white group-open:rotate-45 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 4v16m8-8H4" /></svg>
                     </div>
                   </summary>
-                  <div className="px-5 md:px-6 pb-5 md:pb-6 text-neutral-400 leading-relaxed border-t border-neutral-800/50 pt-4 text-sm">
+                  <div className="px-5 md:px-6 pb-5 md:pb-6 text-slate-600 leading-relaxed border-t border-slate-100 pt-4 text-sm">
                     {faq.answer}
                   </div>
                 </details>
@@ -494,21 +494,21 @@ export default async function Home() {
       const cLine   = data.lineUrl || lineUrl;
       const cLineId = data.lineId  || lineId;
       return (
-        <section key={section.id} id="contact" className="py-20 md:py-36 px-4 bg-black relative overflow-hidden">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] md:w-[1000px] md:h-[1000px] bg-red-600/[0.07] rounded-full blur-3xl" />
-          <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-red-700/[0.04] rounded-full blur-3xl" />
+        <section key={section.id} id="contact" className="py-20 md:py-36 px-4 bg-slate-50 relative overflow-hidden">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] md:w-[1000px] md:h-[1000px] bg-red-100/60 rounded-full blur-3xl" />
+          <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-red-50/60 rounded-full blur-3xl" />
 
           <div className="max-w-2xl mx-auto text-center relative z-10">
-            <div className="inline-flex items-center gap-2 bg-red-600/15 border border-red-500/25 text-red-300 text-[11px] font-bold px-5 py-2 rounded-full mb-6 tracking-[0.2em] uppercase">
-              <div className="w-2 h-2 rounded-full bg-red-400 animate-pulse" />
+            <div className="inline-flex items-center gap-2 bg-red-100 border border-red-200 text-red-700 text-[11px] font-bold px-5 py-2 rounded-full mb-6 tracking-[0.2em] uppercase">
+              <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
               {data.badge || "พร้อมให้บริการ 24/7"}
             </div>
 
-            <h2 className="text-4xl sm:text-5xl md:text-7xl font-black text-white mb-4 md:mb-6 leading-[1.05] tracking-tight px-2">
+            <h2 className="text-4xl sm:text-5xl md:text-7xl font-black text-slate-900 mb-4 md:mb-6 leading-[1.05] tracking-tight px-2">
               {data.heading || "แบตหมด?"}<br />
-              <span className="text-red-500">{data.headingSub || "โทรเลย!"}</span>
+              <span className="text-red-600">{data.headingSub || "โทรเลย!"}</span>
             </h2>
-            <p className="text-neutral-400 text-base md:text-xl mb-8 md:mb-12 max-w-lg mx-auto leading-relaxed px-2">
+            <p className="text-slate-600 text-base md:text-xl mb-8 md:mb-12 max-w-lg mx-auto leading-relaxed px-2">
               {data.description || "ช่างออกนอกสถานที่ภายใน 30 นาที บริการ 24 ชั่วโมงทุกวัน ไม่เว้นวันหยุด"}
             </p>
 
@@ -539,8 +539,8 @@ export default async function Home() {
                   CheckCircle2: <CheckCircle2 className="w-4 h-4" />,
                 };
                 return (
-                  <div key={i} className="flex items-center gap-2 text-neutral-400 text-xs md:text-sm">
-                    <div className="text-red-400">{TrustIcon[t.icon] || TrustIcon.Star}</div>
+                  <div key={i} className="flex items-center gap-2 text-slate-600 text-xs md:text-sm">
+                    <div className="text-red-500">{TrustIcon[t.icon] || TrustIcon.Star}</div>
                     {t.label}
                   </div>
                 );
@@ -554,12 +554,12 @@ export default async function Home() {
     /* ═══════ TEXT ═══════ */
     if (type === "text") {
       return (
-        <section key={section.id} className="py-16 md:py-28 px-4 bg-neutral-950">
+        <section key={section.id} className="py-16 md:py-28 px-4 bg-white">
           <div className="max-w-4xl mx-auto">
             {section.title && (
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white mb-4 md:mb-6 text-center px-2">{section.title}</h2>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 mb-4 md:mb-6 text-center px-2">{section.title}</h2>
             )}
-            <div className="text-neutral-300 leading-relaxed text-sm md:text-lg whitespace-pre-line">
+            <div className="text-slate-700 leading-relaxed text-sm md:text-lg whitespace-pre-line">
               {data.body || ""}
             </div>
           </div>
@@ -570,17 +570,17 @@ export default async function Home() {
     /* ═══════════════════ IMAGE ═══════════════════ */
     if (type === "image") {
       return (
-        <section key={section.id} className="py-12 md:py-20 px-4 bg-black">
+        <section key={section.id} className="py-12 md:py-20 px-4 bg-slate-50">
           <div className="max-w-4xl mx-auto text-center">
             {section.title && (
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-white mb-4 md:mb-6 px-2">{section.title}</h2>
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-4 md:mb-6 px-2">{section.title}</h2>
             )}
             {section.imageUrl && (
               <div className="relative w-full rounded-2xl overflow-hidden" style={getAspectStyle(data.imageRatio)}>
                 <Image src={section.imageUrl} alt={data.alt || section.title || ""} fill className="object-cover" sizes="(max-width:640px) 100vw, (max-width:1024px) 90vw, 896px" />
               </div>
             )}
-            {data.caption && <p className="text-neutral-400 mt-4 text-sm md:text-base">{data.caption}</p>}
+            {data.caption && <p className="text-slate-600 mt-4 text-sm md:text-base">{data.caption}</p>}
           </div>
         </section>
       );
@@ -594,10 +594,10 @@ export default async function Home() {
       const isTop = pos === "top";
 
       return (
-        <section key={section.id} className="py-16 md:py-28 px-4 bg-neutral-950">
+        <section key={section.id} className="py-16 md:py-28 px-4 bg-white">
           <div className="max-w-6xl mx-auto">
             {section.title && (
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white mb-5 md:mb-8 text-center px-2">{section.title}</h2>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 mb-5 md:mb-8 text-center px-2">{section.title}</h2>
             )}
             <div className={`flex ${isVertical ? "flex-col" : "flex-col md:flex-row"} gap-5 md:gap-8 items-center`}>
               {(isImageLeft || isTop) && section.imageUrl && (
@@ -605,7 +605,7 @@ export default async function Home() {
                   <Image src={section.imageUrl} alt={section.title || ""} fill className="object-cover" sizes="(max-width:768px) 100vw, 50vw" />
                 </div>
               )}
-              <div className={`${isVertical ? "w-full" : "w-full md:w-1/2"} text-neutral-300 leading-relaxed text-sm md:text-lg whitespace-pre-line`}>
+              <div className={`${isVertical ? "w-full" : "w-full md:w-1/2"} text-slate-700 leading-relaxed text-sm md:text-lg whitespace-pre-line`}>
                 {data.body || ""}
               </div>
               {(!isImageLeft && !isTop) && section.imageUrl && (
@@ -668,7 +668,7 @@ export default async function Home() {
     /* ═══════════════════ CUSTOM ═══════════════════ */
     if (type === "custom") {
       return (
-        <section key={section.id} className="py-16 px-4 bg-black">
+        <section key={section.id} className="py-16 px-4 bg-slate-50">
           <div className="max-w-6xl mx-auto" dangerouslySetInnerHTML={{ __html: sanitizeHtml(section.content || "") }} />
         </section>
       );
@@ -678,7 +678,7 @@ export default async function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-black flex flex-col">
+    <div className="min-h-screen bg-white flex flex-col">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}

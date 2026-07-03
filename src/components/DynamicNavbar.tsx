@@ -47,12 +47,12 @@ export default function DynamicNavbar({
   logoSizeMobile = 40,
   navbarHeight = 80,
   navbarHeightMobile = 60,
-  navBgColor = "#0f172a",
-  navTextColor = "#cbd5e1",
+  navBgColor = "#ffffff",
+  navTextColor = "#334155",
   navAccentColor = "#dc2626",
 }: DynamicNavbarProps) {
-  const bgHex = navBgColor || "#0f172a";
-  const textHex = navTextColor || "#cbd5e1";
+  const bgHex = navBgColor || "#ffffff";
+  const textHex = navTextColor || "#334155";
   const accentHex = navAccentColor || "#dc2626";
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -115,7 +115,7 @@ export default function DynamicNavbar({
               <div className="w-9 h-9 rounded-xl flex items-center justify-center shadow-lg" style={{ background: `linear-gradient(135deg, ${accentHex}, ${accentHex}cc)`, boxShadow: `0 4px 14px ${accentHex}40` }}>
                 <span className="text-white font-black text-base">P</span>
               </div>
-              <span className="text-xl font-black tracking-tight" style={{ color: '#ffffff' }}>
+              <span className="text-xl font-black tracking-tight" style={{ color: '#0f172a' }}>
                 {brandName}
               </span>
             </div>

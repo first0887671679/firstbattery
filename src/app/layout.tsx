@@ -231,16 +231,16 @@ export default async function RootLayout({
                 logoSizeMobile={headerData.logoSizeMobile || 32}
                 navbarHeight={headerData.navbarHeight || 64}
                 navbarHeightMobile={headerData.navbarHeightMobile || 52}
-                navBgColor={headerData.navBgColor || "#0a0a0a"}
-                navTextColor={headerData.navTextColor || "#a3a3a3"}
+                navBgColor={headerData.navBgColor || "#ffffff"}
+                navTextColor={headerData.navTextColor || "#334155"}
                 navAccentColor={headerData.navAccentColor || "#dc2626"}
               />
             ) : null
           }
           footer={
             footerSection ? (() => {
-              const ftBg = footerData.footerBgColor || "#0a0a0a";
-              const ftText = footerData.footerTextColor || "#737373";
+              const ftBg = footerData.footerBgColor || "#ffffff";
+              const ftText = footerData.footerTextColor || "#64748b";
               const ftAccent = footerData.footerAccentColor || "#dc2626";
               return (
               <footer className="relative overflow-hidden" style={{ backgroundColor: ftBg, color: ftText }}>
@@ -260,7 +260,7 @@ export default async function RootLayout({
                         <div className="w-9 h-9 md:w-10 md:h-10 rounded-xl flex items-center justify-center shadow-lg" style={{ background: `linear-gradient(135deg, ${ftAccent}, ${ftAccent}cc)`, boxShadow: `0 4px 14px ${ftAccent}40` }}>
                           <span className="text-white font-black text-base md:text-lg">P</span>
                         </div>
-                        <span className="text-xl md:text-2xl font-black text-white tracking-tight">
+                        <span className="text-xl md:text-2xl font-black text-slate-900 tracking-tight">
                           {footerData.brandName || "PORNPISIT BATTERY"}
                         </span>
                       </div>
@@ -327,7 +327,7 @@ export default async function RootLayout({
                             </div>
                             <div>
                               <div className="text-xs" style={{ color: `${ftText}88` }}>โทรศัพท์</div>
-                              <div className="text-white font-semibold text-sm transition-colors">
+                              <div className="text-slate-900 font-semibold text-sm transition-colors">
                                 {footerData.phone.replace(/(\d{3})(\d{3})(\d{4})/, "$1-$2-$3")}
                               </div>
                             </div>
@@ -347,7 +347,7 @@ export default async function RootLayout({
                             </div>
                             <div>
                               <div className="text-xs" style={{ color: `${ftText}88` }}>LINE</div>
-                              <div className="text-white font-semibold text-sm group-hover:text-[#06C755] transition-colors">
+                              <div className="text-slate-900 font-semibold text-sm group-hover:text-[#06C755] transition-colors">
                                 {footerData.lineId || "@398kyxfq"}
                               </div>
                             </div>
@@ -367,7 +367,7 @@ export default async function RootLayout({
                             </div>
                             <div>
                               <div className="text-xs" style={{ color: `${ftText}88` }}>Facebook</div>
-                              <div className="text-white font-semibold text-sm group-hover:text-[#1877F2] transition-colors">
+                              <div className="text-slate-900 font-semibold text-sm group-hover:text-[#1877F2] transition-colors">
                                 {footerData.brandName || "PORNPISIT BATTERY"}
                               </div>
                             </div>
@@ -388,7 +388,7 @@ export default async function RootLayout({
                             </div>
                             <div>
                               <div className="text-xs" style={{ color: `${ftText}88` }}>Google Maps</div>
-                              <div className="text-white font-semibold text-sm group-hover:text-red-400 transition-colors">
+                              <div className="text-slate-900 font-semibold text-sm group-hover:text-red-600 transition-colors">
                                 ดูแผนที่ร้าน
                               </div>
                             </div>
