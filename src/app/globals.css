@@ -49,16 +49,16 @@
 }
 
 :root {
-  --background: #0a0a0a;
-  --foreground: #fafafa;
+  --background: #ffffff;
+  --foreground: #0a0a0a;
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
   --primary: #dc2626;
   --primary-foreground: #ffffff;
-  --secondary: #1a1a1a;
-  --secondary-foreground: #fafafa;
+  --secondary: #f1f5f9;
+  --secondary-foreground: #0a0a0a;
   --muted: oklch(0.97 0 0);
   --muted-foreground: oklch(0.556 0 0);
   --accent: oklch(0.97 0 0);
