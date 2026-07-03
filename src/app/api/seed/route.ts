@@ -10,13 +10,13 @@ export async function GET() {
     const hashedPassword = await bcrypt.hash('admin123', 10);
     
     const admin = await prisma.adminUser.upsert({
-      where: { email: 'admin@__DOMAIN__' },
+      where: { email: 'admin@example.com' },
       update: { 
         password: hashedPassword,
         name: 'Admin User'
       },
       create: {
-        email: 'admin@__DOMAIN__',
+        email: 'admin@example.com',
         name: 'Admin User',
         password: hashedPassword,
       },
@@ -44,13 +44,13 @@ export async function POST() {
     
     // Create admin user
     const admin = await prisma.adminUser.upsert({
-      where: { email: 'admin@__DOMAIN__' },
+      where: { email: 'admin@example.com' },
       update: { 
         password: hashedPassword,
         name: 'Admin User'
       },
       create: {
-        email: 'admin@__DOMAIN__',
+        email: 'admin@example.com',
         name: 'Admin User',
         password: hashedPassword,
       },

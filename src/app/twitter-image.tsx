@@ -181,7 +181,7 @@ export default function TwitterImage() {
               display: "flex",
             }}
           >
-            __DOMAIN__
+            https://example.com
           </div>
         </div>
       </div>

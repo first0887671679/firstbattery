@@ -19,6 +19,7 @@ import Showcase from "@/components/Showcase";
 import Testimonials from "@/components/Testimonials";
 
 export const revalidate = 60;
+export const dynamic = "force-dynamic";
 
 export async function generateMetadata(): Promise<Metadata> {
   let postsPage = null;

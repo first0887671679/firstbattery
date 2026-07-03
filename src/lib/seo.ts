@@ -4,7 +4,7 @@
 export const SITE_CONFIG = {
   name: "__BRAND_NAME__",
   siteName: "__BRAND_NAME__ บริการแบตเตอรี่รถยนต์ 24 ชม.",
-  url: "__DOMAIN__",
+  url: "https://example.com",
   locale: "th_TH",
   language: "th",
   phone: "__PHONE__",
@@ -25,8 +25,8 @@ export const SITE_CONFIG = {
     latitude: "__LATITUDE__",
     longitude: "__LONGITUDE__",
   },
-  logo: "__DOMAIN__/opengraph-image",
-  ogImage: "__DOMAIN__/opengraph-image",
+  logo: "https://example.com/opengraph-image",
+  ogImage: "https://example.com/opengraph-image",
   description:
     "__BRAND_NAME__ บริการเปลี่ยนแบตเตอรี่รถยนต์นอกสถานที่ 24 ชั่วโมง __SERVICE_AREA__ ถึงไวใน 30 นาที",
   shortDescription:

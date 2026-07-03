@@ -5,6 +5,7 @@ import { ensureServicePages, getServicePageData } from "@/lib/ensureServicePages
 import ServicePageRenderer from "@/components/ServicePageRenderer";
 
 export const revalidate = 60;
+export const dynamic = "force-dynamic";
 
 const SLUG = "contact-us";
 const FALLBACK_TITLE = `ติดต่อเรา | เปลี่ยนแบตเตอรี่นอกสถานที่ 24 ชม. ห้วยขวาง ดินแดง ลาดพร้าว | __BRAND_NAME__`;

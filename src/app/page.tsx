@@ -19,6 +19,7 @@ const BatteryChecker = nextDynamic(() => import("@/components/BatteryChecker"));
 const AnimateOnScroll = nextDynamic(() => import("@/components/AnimateOnScroll"));
 
 export const revalidate = 60;
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "__BRAND_NAME__ | เปลี่ยนแบตเตอรี่รถยนต์นอกสถานที่ 24 ชม.",
