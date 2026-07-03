@@ -22,8 +22,8 @@ export const SITE_CONFIG = {
     country: "TH",
   },
   geo: {
-    latitude: __LATITUDE__,
-    longitude: __LONGITUDE__,
+    latitude: "__LATITUDE__",
+    longitude: "__LONGITUDE__",
   },
   logo: "__DOMAIN__/opengraph-image",
   ogImage: "__DOMAIN__/opengraph-image",
