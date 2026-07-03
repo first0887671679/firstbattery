@@ -65,7 +65,7 @@ const LOCKED_TYPES = ["header", "sub-header", "footer"];
 const ALL_TYPE_LABELS: Record<string, { label: string; icon: string }> = {
   header: { label: "เมนูบนสุด (Navbar)", icon: "🧭" },
   "sub-header": { label: "แถบรอง (ประกาศ/โปรโมชั่น)", icon: "📢" },
-  footer: { label: "ท้ายเว็บ (Footer)", icon: "�" },
+  footer: { label: "ท้ายเว็บ (Footer)", icon: "" },
   ...Object.fromEntries(SECTION_TYPES.map(t => [t.value, { label: t.label, icon: t.icon }])),
 };
 
@@ -103,15 +103,15 @@ function HeaderForm({ data, imageUrl, onChange, onImageChange }: {
 
   return (
     <div className="space-y-3">
-      <Field label="ชื่อแบรนด์ (โลโก้ข้อความ)" value={data.brandName || ""} onChange={(v) => onChange({ ...data, brandName: v })} placeholder="PORNPISIT BATTERY" />
+      <Field label="ชื่อแบรนด์ (โลโก้ข้อความ)" value={data.brandName || ""} onChange={(v) => onChange({ ...data, brandName: v })} placeholder="__BRAND_NAME__" />
       <Field label="คำอธิบายใต้โลโก้" value={data.brandSub || ""} onChange={(v) => onChange({ ...data, brandSub: v })} placeholder="บริการรถยนต์ 24 ชม." />
       <ImageUpload label="รูปโลโก้ (ถ้ามี)" value={imageUrl} onChange={onImageChange} aspectRatio={data.logoRatio || "free"} onAspectRatioChange={(r) => onChange({ ...data, logoRatio: r })} />
       <div className="grid grid-cols-2 gap-2">
-        <Field label="เบอร์โทร" value={data.phone || ""} onChange={(v) => onChange({ ...data, phone: v })} placeholder="0996731296" />
+        <Field label="เบอร์โทร" value={data.phone || ""} onChange={(v) => onChange({ ...data, phone: v })} placeholder="__PHONE__" />
         <Field label="ข้อความปุ่มโทร" value={data.phoneLabel || ""} onChange={(v) => onChange({ ...data, phoneLabel: v })} placeholder="โทรด่วน" />
       </div>
       <div className="grid grid-cols-2 gap-2">
-        <Field label="Line URL" value={data.lineUrl || ""} onChange={(v) => onChange({ ...data, lineUrl: v })} placeholder="https://lin.ee/OBB86S4" />
+        <Field label="Line URL" value={data.lineUrl || ""} onChange={(v) => onChange({ ...data, lineUrl: v })} placeholder="__LINE_URL__" />
         <Field label="ข้อความปุ่ม Line" value={data.lineLabel || ""} onChange={(v) => onChange({ ...data, lineLabel: v })} placeholder="Line" />
       </div>
 
@@ -174,16 +174,16 @@ function FooterForm({ data, onChange }: { data: Record<string, any>; onChange: (
 
   return (
     <div className="space-y-3">
-      <Field label="ชื่อแบรนด์" value={data.brandName || ""} onChange={(v) => onChange({ ...data, brandName: v })} placeholder="PORNPISIT BATTERY" />
+      <Field label="ชื่อแบรนด์" value={data.brandName || ""} onChange={(v) => onChange({ ...data, brandName: v })} placeholder="__BRAND_NAME__" />
       <FieldArea label="คำอธิบายบริษัท" value={data.description || ""} onChange={(v) => onChange({ ...data, description: v })} rows={2} placeholder="บริการดูแลรักษารถยนต์..." />
       <Field label="เวลาทำการ" value={data.openHours || ""} onChange={(v) => onChange({ ...data, openHours: v })} placeholder="เปิดให้บริการตลอด 24 ชั่วโมง" />
       <Field label="พื้นที่ให้บริการ" value={data.area || ""} onChange={(v) => onChange({ ...data, area: v })} placeholder="ห้วยขวาง ดินแดง ลาดพร้าว บางกะปิ บางเขน จตุจักร ดุสิต บางซื่อ" />
       <div className="grid grid-cols-2 gap-2">
-        <Field label="เบอร์โทร" value={data.phone || ""} onChange={(v) => onChange({ ...data, phone: v })} placeholder="0996731296" />
-        <Field label="Line ID" value={data.lineId || ""} onChange={(v) => onChange({ ...data, lineId: v })} placeholder="@398kyxfq" />
+        <Field label="เบอร์โทร" value={data.phone || ""} onChange={(v) => onChange({ ...data, phone: v })} placeholder="__PHONE__" />
+        <Field label="Line ID" value={data.lineId || ""} onChange={(v) => onChange({ ...data, lineId: v })} placeholder="__LINE_ID__" />
       </div>
-      <Field label="Line URL" value={data.lineUrl || ""} onChange={(v) => onChange({ ...data, lineUrl: v })} placeholder="https://lin.ee/OBB86S4" />
-      <Field label="Copyright" value={data.copyright || ""} onChange={(v) => onChange({ ...data, copyright: v })} placeholder="PORNPISIT BATTERY. All rights reserved." />
+      <Field label="Line URL" value={data.lineUrl || ""} onChange={(v) => onChange({ ...data, lineUrl: v })} placeholder="__LINE_URL__" />
+      <Field label="Copyright" value={data.copyright || ""} onChange={(v) => onChange({ ...data, copyright: v })} placeholder="__BRAND_NAME__. All rights reserved." />
 
       <div className="border-t pt-3">
         <p className="text-sm font-medium text-slate-700 mb-2">ลิงก์บริการ</p>
@@ -304,8 +304,8 @@ function HeroForm({ data, imageUrl, onChange, onImageChange }: {
             <FieldArea label="คำอธิบาย" value={slide.description || ""} onChange={(v) => updateSlide(idx, "description", v)} rows={2} placeholder="คำอธิบายสั้นๆ" />
 
             <div className="grid grid-cols-2 gap-2">
-              <Field label="เบอร์โทร (tel:)" value={slide.phoneUrl || ""} onChange={(v) => updateSlide(idx, "phoneUrl", v)} placeholder="tel:0996731296" />
-              <Field label="ลิงก์ Line" value={slide.lineUrl || ""} onChange={(v) => updateSlide(idx, "lineUrl", v)} placeholder="https://lin.ee/OBB86S4" />
+              <Field label="เบอร์โทร (tel:)" value={slide.phoneUrl || ""} onChange={(v) => updateSlide(idx, "phoneUrl", v)} placeholder="tel:__PHONE__" />
+              <Field label="ลิงก์ Line" value={slide.lineUrl || ""} onChange={(v) => updateSlide(idx, "lineUrl", v)} placeholder="__LINE_URL__" />
             </div>
 
             <div className="grid grid-cols-2 gap-2">
@@ -573,8 +573,8 @@ function CtaBannerForm({ data, onChange }: { data: Record<string, any>; onChange
       <Field label="หัวข้อรอง (สีส้ม)" value={data.headingSub || ""} onChange={(v) => onChange({ ...data, headingSub: v })} placeholder="โทรหาเราได้เลย" />
       <FieldArea label="คำอธิบาย" value={data.description || ""} onChange={(v) => onChange({ ...data, description: v })} rows={2} placeholder="ช่างผู้เชี่ยวชาญออกนอกสถานที่ภายใน 30 นาที · บริการ 24 ชั่วโมง" />
       <div className="grid grid-cols-2 gap-2">
-        <Field label="เบอร์โทร" value={data.phone || ""} onChange={(v) => onChange({ ...data, phone: v })} placeholder="0996731296" />
-        <Field label="Line URL" value={data.lineUrl || ""} onChange={(v) => onChange({ ...data, lineUrl: v })} placeholder="https://lin.ee/OBB86S4" />
+        <Field label="เบอร์โทร" value={data.phone || ""} onChange={(v) => onChange({ ...data, phone: v })} placeholder="__PHONE__" />
+        <Field label="Line URL" value={data.lineUrl || ""} onChange={(v) => onChange({ ...data, lineUrl: v })} placeholder="__LINE_URL__" />
       </div>
 
       <div className="border-t pt-3">
@@ -648,10 +648,10 @@ function ContactForm({ data, onChange }: { data: Record<string, any>; onChange: 
       <Field label="หัวข้อ" value={data.heading || ""} onChange={(v) => onChange({ ...data, heading: v })} placeholder="รถเสีย? อย่ารอช้า โทรหาเราเลย!" />
       <FieldArea label="คำอธิบาย" value={data.description || ""} onChange={(v) => onChange({ ...data, description: v })} rows={2} placeholder="คำอธิบาย..." />
       <div className="grid grid-cols-2 gap-2">
-        <Field label="เบอร์โทร" value={data.phone || ""} onChange={(v) => onChange({ ...data, phone: v })} placeholder="0996731296" />
-        <Field label="Line ID" value={data.lineId || ""} onChange={(v) => onChange({ ...data, lineId: v })} placeholder="@398kyxfq" />
+        <Field label="เบอร์โทร" value={data.phone || ""} onChange={(v) => onChange({ ...data, phone: v })} placeholder="__PHONE__" />
+        <Field label="Line ID" value={data.lineId || ""} onChange={(v) => onChange({ ...data, lineId: v })} placeholder="__LINE_ID__" />
       </div>
-      <Field label="Line URL" value={data.lineUrl || ""} onChange={(v) => onChange({ ...data, lineUrl: v })} placeholder="https://lin.ee/OBB86S4" />
+      <Field label="Line URL" value={data.lineUrl || ""} onChange={(v) => onChange({ ...data, lineUrl: v })} placeholder="__LINE_URL__" />
 
       {/* Trust Signals */}
       <div className="border-t pt-3">
@@ -822,7 +822,7 @@ function ContactChannelsForm({ data, onChange }: { data: Record<string, any>; on
                 <Field label="ข้อความรอง" value={ch.sublabel || ""} onChange={(v) => updateChannel(idx, "sublabel", v)} placeholder="สายด่วน 24 ชม." />
               </div>
               <Field label="ค่าที่แสดง" value={ch.value || ""} onChange={(v) => updateChannel(idx, "value", v)} placeholder="099-673-1296" />
-              <Field label="ลิงก์ (href)" value={ch.href || ""} onChange={(v) => updateChannel(idx, "href", v)} placeholder="tel:0996731296" />
+              <Field label="ลิงก์ (href)" value={ch.href || ""} onChange={(v) => updateChannel(idx, "href", v)} placeholder="tel:__PHONE__" />
             </CardContent>
           </Card>
         ))}

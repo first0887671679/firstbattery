@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { PhoneCall, MessageCircle, MapPin, Clock, Facebook, Map } from "lucide-react";
 
 export default function Footer() {
@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {/* Company Info */}
           <div>
-            <h3 className="text-2xl font-extrabold text-red-600 mb-4">PORNPISIT BATTERY</h3>
+            <h3 className="text-2xl font-extrabold text-red-600 mb-4">__BRAND_NAME__</h3>
             <p className="text-slate-300 text-sm leading-relaxed">
               บริการเปลี่ยนแบตเตอรี่รถยนต์นอกสถานที่ 24 ชั่วโมง
               ถึงที่รวดเร็วทันใจ โดยช่างผู้เชี่ยวชาญ
@@ -50,30 +50,30 @@ export default function Footer() {
             <h4 className="text-lg font-bold mb-4">ติดต่อเรา</h4>
             <div className="space-y-3">
               <Link
-                href="tel:0996731296"
+                href="tel:__PHONE__"
                 className="flex items-center gap-3 text-slate-300 hover:text-red-400 transition-colors"
               >
                 <PhoneCall className="w-5 h-5 text-red-400" />
-                <span>โทรศัพท์ 099-673-1296</span>
+                <span>โทรศัพท์ __PHONE__</span>
               </Link>
               <Link
-                href="https://lin.ee/OBB86S4"
+                href="__LINE_URL__"
                 target="_blank"
                 className="flex items-center gap-3 text-slate-300 hover:text-red-400 transition-colors"
               >
                 <MessageCircle className="w-5 h-5 text-[#00B900]" />
-                <span>LINE @398kyxfq</span>
+                <span>LINE __LINE_ID__</span>
               </Link>
               <Link
-                href="https://www.facebook.com/profile.php?id=61586430572682"
+                href="__FACEBOOK_URL__"
                 target="_blank"
                 className="flex items-center gap-3 text-slate-300 hover:text-red-400 transition-colors"
               >
                 <Facebook className="w-5 h-5 text-[#1877F2]" />
-                <span>Facebook PORNPISIT BATTERY</span>
+                <span>Facebook __BRAND_NAME__</span>
               </Link>
               <Link
-                href="https://maps.app.goo.gl/vEpxr93MhWHrDB3Y9?g_st=ic"
+                href="__GOOGLE_MAP_URL__"
                 target="_blank"
                 className="flex items-center gap-3 text-slate-300 hover:text-red-400 transition-colors"
               >
@@ -86,7 +86,7 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="border-t border-slate-800 mt-10 pt-6 text-center text-slate-500 text-sm">
-          © {new Date().getFullYear()} PORNPISIT BATTERY. All rights reserved.
+          © {new Date().getFullYear()} __BRAND_NAME__. All rights reserved.
         </div>
       </div>
     </footer>

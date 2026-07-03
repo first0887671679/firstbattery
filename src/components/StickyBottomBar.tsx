@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import { PhoneCall, MessageCircle } from "lucide-react";
@@ -13,9 +13,9 @@ interface StickyBottomBarProps {
 }
 
 export default function StickyBottomBar({
-  phone = "0996731296",
+  phone = "__PHONE__",
   phoneLabel = "โทรเรียกช่าง",
-  lineUrl = "https://lin.ee/OBB86S4",
+  lineUrl = "__LINE_URL__",
   lineLabel = "แอดไลน์",
 }: StickyBottomBarProps) {
   return (

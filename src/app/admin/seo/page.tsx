@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
@@ -121,7 +121,7 @@ export default function SeoAdminPage() {
             <Input
               value={activePage.title}
               onChange={(e) => updateField("title", e.target.value)}
-              placeholder="เช่น เปลี่ยนแบตเตอรี่นอกสถานที่ 24 ชม. | PORNPISIT BATTERY"
+              placeholder="เช่น เปลี่ยนแบตเตอรี่นอกสถานที่ 24 ชม. | __BRAND_NAME__"
             />
             <p className="text-xs text-slate-400">{activePage.title.length}/60 ตัวอักษร (แนะนำไม่เกิน 60)</p>
           </div>

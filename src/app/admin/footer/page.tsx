@@ -22,7 +22,7 @@ export default function FooterEditor() {
   const [sectionId, setSectionId] = useState("");
   const [pageId, setPageId] = useState("");
 
-  const [brandName, setBrandName] = useState("PORNPISIT BATTERY");
+  const [brandName, setBrandName] = useState("__BRAND_NAME__");
   const [description, setDescription] = useState("");
   const [openHours, setOpenHours] = useState("");
   const [area, setArea] = useState("");
@@ -146,7 +146,7 @@ export default function FooterEditor() {
         <CardContent className="space-y-3">
           <div>
             <Label className="text-sm">ชื่อแบรนด์</Label>
-            <Input className="mt-1" value={brandName} onChange={(e) => setBrandName(e.target.value)} placeholder="PORNPISIT BATTERY" />
+            <Input className="mt-1" value={brandName} onChange={(e) => setBrandName(e.target.value)} placeholder="__BRAND_NAME__" />
           </div>
           <div>
             <Label className="text-sm">คำอธิบาย</Label>
@@ -164,7 +164,7 @@ export default function FooterEditor() {
           </div>
           <div>
             <Label className="text-sm">ข้อความ Copyright</Label>
-            <Input className="mt-1" value={copyright} onChange={(e) => setCopyright(e.target.value)} placeholder="PORNPISIT BATTERY. All rights reserved." />
+            <Input className="mt-1" value={copyright} onChange={(e) => setCopyright(e.target.value)} placeholder="__BRAND_NAME__. All rights reserved." />
           </div>
         </CardContent>
       </Card>
@@ -177,16 +177,16 @@ export default function FooterEditor() {
         <CardContent className="space-y-3">
           <div>
             <Label className="text-sm">เบอร์โทร</Label>
-            <Input className="mt-1" value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="0996731296" />
+            <Input className="mt-1" value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="__PHONE__" />
           </div>
           <div className="grid grid-cols-2 gap-3">
             <div>
               <Label className="text-sm">Line URL</Label>
-              <Input className="mt-1" value={lineUrl} onChange={(e) => setLineUrl(e.target.value)} placeholder="https://lin.ee/OBB86S4" />
+              <Input className="mt-1" value={lineUrl} onChange={(e) => setLineUrl(e.target.value)} placeholder="__LINE_URL__" />
             </div>
             <div>
               <Label className="text-sm">Line ID</Label>
-              <Input className="mt-1" value={lineId} onChange={(e) => setLineId(e.target.value)} placeholder="@398kyxfq" />
+              <Input className="mt-1" value={lineId} onChange={(e) => setLineId(e.target.value)} placeholder="__LINE_ID__" />
             </div>
           </div>
         </CardContent>

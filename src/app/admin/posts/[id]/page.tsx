@@ -271,7 +271,7 @@ export default function PostEditor() {
                   className="mt-1"
                   value={author}
                   onChange={(e) => setAuthor(e.target.value)}
-                  placeholder="เช่น ทีม PORNPISIT BATTERY"
+                  placeholder="เช่น ทีม __BRAND_NAME__"
                 />
               </div>
             </CardContent>

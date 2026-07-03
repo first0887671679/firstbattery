@@ -1,5 +1,5 @@
 /**
- * Tailwind configuration with red-black branding — PORNPISIT BATTERY
+ * Tailwind configuration with red-black branding
  */
 export default {
   content: [

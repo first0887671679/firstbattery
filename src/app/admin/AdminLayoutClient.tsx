@@ -56,7 +56,7 @@ function SidebarContent({ pathname, onNavigate }: { pathname: string; onNavigate
             <Home size={16} className="text-white" />
           </div>
           <div>
-            <h2 className="text-base font-bold text-white leading-none">PORNPISIT BATTERY</h2>
+            <h2 className="text-base font-bold text-white leading-none">__BRAND_NAME__</h2>
             <p className="text-[10px] text-slate-500 leading-none mt-0.5">Admin Panel</p>
           </div>
         </Link>
@@ -154,7 +154,7 @@ export function AdminLayoutClient({ children }: { children: React.ReactNode }) {
           >
             <Menu size={22} />
           </button>
-          <h1 className="text-sm font-bold text-slate-800">PORNPISIT BATTERY Admin</h1>
+          <h1 className="text-sm font-bold text-slate-800">__BRAND_NAME__ Admin</h1>
         </header>
 
         {/* Page Content */}

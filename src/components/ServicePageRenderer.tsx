@@ -380,7 +380,7 @@ function ContactChannelsSection({ data, title }: { data: any; title: string | nu
   const channels: { type: string; label: string; sublabel: string; value: string; href: string }[] = data.channels || [
     { type: "phone", label: "โทรศัพท์", sublabel: "สายด่วน 24 ชม.", value: SITE_CONFIG.phoneFormatted, href: `tel:${SITE_CONFIG.phone}` },
     { type: "line", label: "Line Official", sublabel: "ส่งโลเคชั่น / รูปประเมินราคา", value: SITE_CONFIG.lineId, href: SITE_CONFIG.lineUrl },
-    { type: "facebook", label: "Facebook Page", sublabel: "ติดตามข่าวสาร / โปรโมชั่น", value: "PORNPISIT BATTERY", href: SITE_CONFIG.facebook },
+    { type: "facebook", label: "Facebook Page", sublabel: "ติดตามข่าวสาร / โปรโมชั่น", value: "__BRAND_NAME__", href: SITE_CONFIG.facebook },
   ];
 
   const colorMap: Record<string, { border: string; bg: string; bgHover: string; text: string; icon: React.ReactNode }> = {
@@ -431,7 +431,7 @@ function MapSection({ data, title }: { data: any; title: string | null }) {
             allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            title="แผนที่พื้นที่ให้บริการ PORNPISIT BATTERY"
+            title="แผนที่พื้นที่ให้บริการ __BRAND_NAME__"
             className="w-full"
           />
         </div>

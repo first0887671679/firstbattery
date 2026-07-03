@@ -1,4 +1,4 @@
-import type { Metadata, Viewport } from "next";
+﻿import type { Metadata, Viewport } from "next";
 import { cache } from "react";
 import { Prompt, Sarabun } from "next/font/google";
 import Script from 'next/script'
@@ -50,8 +50,8 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     metadataBase: new URL(SITE_CONFIG.url),
     title: {
-      template: '%s | PORNPISIT BATTERY บริการแบตเตอรี่ 24 ชม.',
-      default: 'PORNPISIT BATTERY บริการแบตเตอรี่รถยนต์นอกสถานที่ 24 ชั่วโมง | เปลี่ยนแบตถึงที่',
+      template: '%s | __BRAND_NAME__ บริการแบตเตอรี่ 24 ชม.',
+      default: '__BRAND_NAME__ บริการแบตเตอรี่รถยนต์นอกสถานที่ 24 ชั่วโมง | เปลี่ยนแบตถึงที่',
     },
     description: SITE_CONFIG.description,
     keywords: SITE_CONFIG.keywords,
@@ -70,7 +70,7 @@ export async function generateMetadata(): Promise<Metadata> {
       },
     },
     openGraph: {
-      title: 'PORNPISIT BATTERY บริการแบตเตอรี่รถยนต์นอกสถานที่ 24 ชั่วโมง',
+      title: '__BRAND_NAME__ บริการแบตเตอรี่รถยนต์นอกสถานที่ 24 ชั่วโมง',
       description: SITE_CONFIG.shortDescription,
       url: SITE_CONFIG.url,
       siteName: SITE_CONFIG.siteName,
@@ -81,13 +81,13 @@ export async function generateMetadata(): Promise<Metadata> {
           url: SITE_CONFIG.ogImage,
           width: 1200,
           height: 630,
-          alt: 'PORNPISIT BATTERY - บริการแบตเตอรี่รถยนต์นอกสถานที่ 24 ชั่วโมง',
+          alt: '__BRAND_NAME__ - บริการแบตเตอรี่รถยนต์นอกสถานที่ 24 ชั่วโมง',
         },
       ],
     },
     twitter: {
       card: 'summary_large_image',
-      title: 'PORNPISIT BATTERY บริการแบตเตอรี่รถยนต์นอกสถานที่ 24 ชั่วโมง',
+      title: '__BRAND_NAME__ บริการแบตเตอรี่รถยนต์นอกสถานที่ 24 ชั่วโมง',
       description: SITE_CONFIG.shortDescription,
       images: [SITE_CONFIG.ogImage],
     },
@@ -218,12 +218,12 @@ export default async function RootLayout({
           navbar={
             headerSection ? (
               <DynamicNavbar
-                brandName={headerData.brandName || "PORNPISIT BATTERY"}
+                brandName={headerData.brandName || "__BRAND_NAME__"}
                 brandSub={headerData.brandSub || "บริการแบตเตอรี่ 24 ชม."}
                 logoUrl={headerSection.imageUrl || ""}
-                phone={headerData.phone || "0996731296"}
+                phone={headerData.phone || "__PHONE__"}
                 phoneLabel={headerData.phoneLabel || "โทรด่วน"}
-                lineUrl={headerData.lineUrl || "https://lin.ee/OBB86S4"}
+                lineUrl={headerData.lineUrl || "__LINE_URL__"}
                 lineLabel={headerData.lineLabel || "Line"}
                 links={filteredLinks}
                 logoSize={headerData.logoSize || 44}
@@ -260,7 +260,7 @@ export default async function RootLayout({
                           <span className="text-white font-black text-base md:text-lg">P</span>
                         </div>
                         <span className="text-xl md:text-2xl font-black text-white tracking-tight">
-                          {footerData.brandName || "PORNPISIT BATTERY"}
+                          {footerData.brandName || "__BRAND_NAME__"}
                         </span>
                       </div>
                       <p className="text-xs md:text-sm leading-relaxed mb-4 md:mb-5" style={{ color: ftText }}>{footerData.description || ""}</p>
@@ -347,7 +347,7 @@ export default async function RootLayout({
                             <div>
                               <div className="text-xs" style={{ color: `${ftText}88` }}>LINE</div>
                               <div className="text-white font-semibold text-sm group-hover:text-[#06C755] transition-colors">
-                                {footerData.lineId || "@398kyxfq"}
+                                {footerData.lineId || "__LINE_ID__"}
                               </div>
                             </div>
                           </a>
@@ -367,7 +367,7 @@ export default async function RootLayout({
                             <div>
                               <div className="text-xs" style={{ color: `${ftText}88` }}>Facebook</div>
                               <div className="text-white font-semibold text-sm group-hover:text-[#1877F2] transition-colors">
-                                {footerData.brandName || "PORNPISIT BATTERY"}
+                                {footerData.brandName || "__BRAND_NAME__"}
                               </div>
                             </div>
                           </a>
@@ -400,7 +400,7 @@ export default async function RootLayout({
                   {/* Bottom bar */}
                   <div className="pt-4 md:pt-6 flex flex-col sm:flex-row items-center justify-between gap-2 sm:gap-3" style={{ borderTop: `1px solid ${ftText}15` }}>
                     <p className="text-[10px] sm:text-xs" style={{ color: `${ftText}88` }}>
-                      © {new Date().getFullYear()} {footerData.copyright || "PORNPISIT BATTERY. All rights reserved."}
+                      © {new Date().getFullYear()} {footerData.copyright || "__BRAND_NAME__. All rights reserved."}
                     </p>
                     <div className="flex items-center gap-1.5">
                       <div className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
@@ -414,9 +414,9 @@ export default async function RootLayout({
           }
           stickyBar={
             <StickyBottomBar
-              phone={headerData.phone || "0996731296"}
+              phone={headerData.phone || "__PHONE__"}
               phoneLabel={headerData.stickyPhoneLabel || headerData.phoneLabel || "โทรเรียกช่าง"}
-              lineUrl={headerData.lineUrl || "https://lin.ee/OBB86S4"}
+              lineUrl={headerData.lineUrl || "__LINE_URL__"}
               lineLabel={headerData.stickyLineLabel || headerData.lineLabel || "แอดไลน์"}
             />
           }

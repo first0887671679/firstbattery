@@ -1,7 +1,7 @@
 {
-  "name": "PORNPISIT BATTERY - บริการเปลี่ยนแบตเตอรี่รถยนต์นอกสถานที่ 24 ชม.",
-  "short_name": "PORNPISIT BATTERY",
-  "description": "บริการเปลี่ยนแบตเตอรี่รถยนต์นอกสถานที่ 24 ชั่วโมง พ่วงแบตฤกษ์ฉุกเฉิน ตรวจเช็คแบตฟรี ห้วยขวาง ดินแดง ลาดพร้าว บางกะปิ",
+  "name": "__BRAND_NAME__ - บริการเปลี่ยนแบตเตอรี่รถยนต์นอกสถานที่ 24 ชม.",
+  "short_name": "__BRAND_NAME__",
+  "description": "บริการเปลี่ยนแบตเตอรี่รถยนต์นอกสถานที่ 24 ชั่วโมง __SERVICE_AREA__",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#0a0a0a",

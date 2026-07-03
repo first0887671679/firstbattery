@@ -1,4 +1,4 @@
-import { NextResponse } from "next/server";
+﻿import { NextResponse } from "next/server";
 import { PrismaClient } from "@prisma/client";
 import bcrypt from "bcryptjs";
 
@@ -10,13 +10,13 @@ export async function GET() {
     const hashedPassword = await bcrypt.hash('admin123', 10);
     
     const admin = await prisma.adminUser.upsert({
-      where: { email: 'admin@pornpisitbattery.com' },
+      where: { email: 'admin@__DOMAIN__' },
       update: { 
         password: hashedPassword,
         name: 'Admin User'
       },
       create: {
-        email: 'admin@pornpisitbattery.com',
+        email: 'admin@__DOMAIN__',
         name: 'Admin User',
         password: hashedPassword,
       },
@@ -44,13 +44,13 @@ export async function POST() {
     
     // Create admin user
     const admin = await prisma.adminUser.upsert({
-      where: { email: 'admin@pornpisitbattery.com' },
+      where: { email: 'admin@__DOMAIN__' },
       update: { 
         password: hashedPassword,
         name: 'Admin User'
       },
       create: {
-        email: 'admin@pornpisitbattery.com',
+        email: 'admin@__DOMAIN__',
         name: 'Admin User',
         password: hashedPassword,
       },

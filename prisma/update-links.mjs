@@ -23,9 +23,9 @@ async function main() {
   const headerSec = sections.find((s) => s.type === 'header')
   if (headerSec) {
     const data = JSON.parse(headerSec.content || '{}')
-    data.brandName = 'PORNPISIT BATTERY'
-    data.phone = '0996731296'
-    data.lineUrl = 'https://lin.ee/OBB86S4'
+    data.brandName = '__BRAND_NAME__'
+    data.phone = '__PHONE__'
+    data.lineUrl = '__LINE_URL__'
     data.links = [
       { label: 'หน้าแรก', href: '/' },
       {
@@ -89,15 +89,15 @@ async function main() {
   const footerSec = sections.find((s) => s.type === 'footer')
   if (footerSec) {
     const data = JSON.parse(footerSec.content || '{}')
-    data.brandName = 'PORNPISIT BATTERY'
-    data.description = 'PORNPISIT BATTERY บริการดูแลรักษารถยนต์นอกสถานที่ 24 ชั่วโมง ถึงที่รวดเร็วทันใจ โดยช่างผู้เชี่ยวชาญ'
-    data.area = 'โซนห้วยขวาง ดินแดง ลาดพร้าว บางกะปิ บางเขน จตุจักร ดุสิต บางซื่อ'
-    data.phone = '0996731296'
-    data.lineId = '@398kyxfq'
-    data.lineUrl = 'https://lin.ee/OBB86S4'
-    data.facebook = 'https://www.facebook.com/profile.php?id=61586430572682'
-    data.googleMap = 'https://maps.app.goo.gl/vEpxr93MhWHrDB3Y9?g_st=ic'
-    data.copyright = 'PORNPISIT BATTERY. All rights reserved.'
+    data.brandName = '__BRAND_NAME__'
+    data.description = '__BRAND_NAME__ บริการดูแลรักษารถยนต์นอกสถานที่ 24 ชั่วโมง ถึงที่รวดเร็วทันใจ โดยช่างผู้เชี่ยวชาญ'
+    data.area = '__SERVICE_AREA__'
+    data.phone = '__PHONE__'
+    data.lineId = '__LINE_ID__'
+    data.lineUrl = '__LINE_URL__'
+    data.facebook = '__FACEBOOK_URL__'
+    data.googleMap = '__GOOGLE_MAP_URL__'
+    data.copyright = '__BRAND_NAME__. All rights reserved.'
     data.serviceLinks = [
       { label: 'ปะยางนอกสถานที่ 24 ชม.', href: '/mobile-tire-repair' },
       { label: 'เปลี่ยนแบตเตอรี่รถยนต์', href: '/battery-replacement' },
@@ -117,9 +117,9 @@ async function main() {
   const contactSec = sections.find((s) => s.type === 'contact')
   if (contactSec) {
     const data = JSON.parse(contactSec.content || '{}')
-    data.phone = '0996731296'
-    data.lineId = '@398kyxfq'
-    data.lineUrl = 'https://lin.ee/OBB86S4'
+    data.phone = '__PHONE__'
+    data.lineId = '__LINE_ID__'
+    data.lineUrl = '__LINE_URL__'
     await prisma.pageSection.update({
       where: { id: contactSec.id },
       data: { content: JSON.stringify(data) },
@@ -134,8 +134,8 @@ async function main() {
     if (Array.isArray(data.slides)) {
       data.slides = data.slides.map((slide) => ({
         ...slide,
-        phoneUrl: 'tel:0996731296',
-        lineUrl: 'https://lin.ee/OBB86S4',
+        phoneUrl: 'tel:__PHONE__',
+        lineUrl: '__LINE_URL__',
       }))
     }
     await prisma.pageSection.update({

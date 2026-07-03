@@ -46,7 +46,7 @@ export default function LoginPage() {
       <Card className="w-full max-w-md">
         <CardHeader className="space-y-1 text-center">
           <CardTitle className="text-2xl font-bold tracking-tight text-red-600">
-            PORNPISIT BATTERY Admin
+            __BRAND_NAME__ Admin
           </CardTitle>
           <CardDescription>
             เข้าสู่ระบบเพื่อจัดการข้อมูลเว็บไซต์

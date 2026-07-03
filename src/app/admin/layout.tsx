@@ -1,7 +1,7 @@
-import { AdminLayoutClient } from "./AdminLayoutClient";
+﻿import { AdminLayoutClient } from "./AdminLayoutClient";
 
 export const metadata = {
-  title: "Admin Dashboard | PORNPISIT BATTERY",
+  title: "Admin Dashboard | __BRAND_NAME__",
   description: "ระบบจัดการหลังบ้าน",
 };
 
