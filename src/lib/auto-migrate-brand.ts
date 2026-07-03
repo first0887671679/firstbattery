@@ -1,5 +1,5 @@
 ﻿/**
- * Auto-migration: Updates DB sections with __BRAND_NAME__ data
+ * Auto-migration: Updates DB sections with PORNPISIT BATTERY data
  * Runs once on first server request. Checks if header still has old brand name.
  */
 import { prisma } from "@/lib/prisma";
@@ -28,7 +28,7 @@ export async function ensureBrandMigration() {
       return; // Already migrated
     }
 
-    console.log("[auto-migrate] Updating DB to __BRAND_NAME__...");
+    console.log("[auto-migrate] Updating DB to PORNPISIT BATTERY...");
 
     for (const section of sections) {
       const type = section.type;
@@ -37,11 +37,11 @@ export async function ensureBrandMigration() {
         await update(section.id, {
           content: JSON.stringify({
             ...JSON.parse(section.content || "{}"),
-            brandName: "__BRAND_NAME__",
+            brandName: "PORNPISIT BATTERY",
             brandSub: "บริการแบตเตอรี่ 24 ชม.",
-            phone: "__PHONE__",
+            phone: "0996731296",
             phoneLabel: "โทรด่วน",
-            lineUrl: "__LINE_URL__",
+            lineUrl: "https://lin.ee/OBB86S4",
             lineLabel: "Line",
             stickyPhoneLabel: "โทรเรียกช่าง",
             stickyLineLabel: "แอดไลน์",
@@ -59,7 +59,7 @@ export async function ensureBrandMigration() {
         await update(section.id, {
           content: JSON.stringify({
             text: "🔋 บริการเปลี่ยนแบตเตอรี่ 24 ชม. ถึงที่ทันใจ ห้วยขวาง ดินแดง ลาดพร้าว บางกะปิ โทรเลย!",
-            linkUrl: "tel:__PHONE__",
+            linkUrl: "tel:0996731296",
             linkLabel: "โทรเลย",
             bgColor: "red",
           }),
@@ -71,12 +71,12 @@ export async function ensureBrandMigration() {
         if (Array.isArray(heroData.slides)) {
           heroData.slides = heroData.slides.map((slide: any) => ({
             ...slide,
-            phoneUrl: "tel:__PHONE__",
-            lineUrl: "__LINE_URL__",
+            phoneUrl: "tel:0996731296",
+            lineUrl: "https://lin.ee/OBB86S4",
           }));
         } else {
-          heroData.phoneUrl = "tel:__PHONE__";
-          heroData.lineUrl = "__LINE_URL__";
+          heroData.phoneUrl = "tel:0996731296";
+          heroData.lineUrl = "https://lin.ee/OBB86S4";
         }
         await update(section.id, { content: JSON.stringify(heroData) });
       }
@@ -98,7 +98,7 @@ export async function ensureBrandMigration() {
 
       if (type === "why-us") {
         await update(section.id, {
-          title: "ทำไมต้องเลือก __BRAND_NAME__?",
+          title: "ทำไมต้องเลือก PORNPISIT BATTERY?",
           content: JSON.stringify({
             badge: "Why Choose Us",
             subtitle: "เรามุ่งมั่นให้บริการที่ดีที่สุด",
@@ -131,10 +131,10 @@ export async function ensureBrandMigration() {
           content: JSON.stringify({
             items: [
               { question: "เปลี่ยนแบตเตอรี่นอกสถานที่ใช้เวลานานไหม?", answer: "ใช้เวลาเปลี่ยนเพียง 15-30 นาที ช่างเดินทางถึงที่คุณภายใน 30 นาที" },
-              { question: "บริการ 24 ชั่วโมงจริงไหม?", answer: "ใช่ครับ ทุกวัน ไม่มีวันหยุด โทร __PHONE__ หรือแอดไลน์ __LINE_ID__" },
+              { question: "บริการ 24 ชั่วโมงจริงไหม?", answer: "ใช่ครับ ทุกวัน ไม่มีวันหยุด โทร 0996731296 หรือแอดไลน์ @398kyxfq" },
               { question: "ให้บริการพื้นที่ไหนบ้าง?", answer: "ห้วยขวาง ดินแดง ลาดพร้าว บางกะปิ บางเขน จตุจักร ดุสิต บางซื่อ" },
               { question: "มีการรับประกันแบตเตอรี่ไหม?", answer: "แบตเตอรี่ทุกลูกเป็นของแท้ มีรับประกันตามเงื่อนไขของแต่ละยี่ห้อ" },
-              { question: "ราคาเปลี่ยนแบตเตอรี่เท่าไหร่?", answer: "ราคาขึ้นอยู่กับรุ่นรถและขนาดแบต แอดไลน์ __LINE_ID__ สอบถามราคาฟรี" },
+              { question: "ราคาเปลี่ยนแบตเตอรี่เท่าไหร่?", answer: "ราคาขึ้นอยู่กับรุ่นรถและขนาดแบต แอดไลน์ @398kyxfq สอบถามราคาฟรี" },
             ],
           }),
         });
@@ -147,9 +147,9 @@ export async function ensureBrandMigration() {
             badge: "พร้อมให้บริการ 24/7",
             heading: "แบตหมด? โทรหาเราเลย!",
             description: "ทีมช่างผู้เชี่ยวชาญพร้อมเปลี่ยนแบตเตอรี่ถึงที่คุณตลอด 24 ชั่วโมง",
-            phone: "__PHONE__",
-            lineId: "__LINE_ID__",
-            lineUrl: "__LINE_URL__",
+            phone: "0996731296",
+            lineId: "@398kyxfq",
+            lineUrl: "https://lin.ee/OBB86S4",
             trustSignals: [
               { icon: "MapPin", label: "ห้วยขวาง ดินแดง ลาดพร้าว บางกะปิ" },
               { icon: "Clock", label: "บริการ 24 ชั่วโมง" },
@@ -162,16 +162,16 @@ export async function ensureBrandMigration() {
       if (type === "footer") {
         await update(section.id, {
           content: JSON.stringify({
-            brandName: "__BRAND_NAME__",
-            description: "__BRAND_NAME__ บริการเปลี่ยนแบตเตอรี่รถยนต์นอกสถานที่ 24 ชม. ถึงที่รวดเร็วทันใจ",
+            brandName: "PORNPISIT BATTERY",
+            description: "PORNPISIT BATTERY บริการเปลี่ยนแบตเตอรี่รถยนต์นอกสถานที่ 24 ชม. ถึงที่รวดเร็วทันใจ",
             openHours: "เปิดให้บริการตลอด 24 ชั่วโมง",
             area: "ห้วยขวาง ดินแดง ลาดพร้าว บางกะปิ บางเขน จตุจักร ดุสิต บางซื่อ",
-            phone: "__PHONE__",
-            lineId: "__LINE_ID__",
-            lineUrl: "__LINE_URL__",
-            facebook: "__FACEBOOK_URL__",
-            googleMap: "__GOOGLE_MAP_URL__",
-            copyright: "__BRAND_NAME__. All rights reserved.",
+            phone: "0996731296",
+            lineId: "@398kyxfq",
+            lineUrl: "https://lin.ee/OBB86S4",
+            facebook: "https://www.facebook.com/profile.php?id=61586430572682",
+            googleMap: "https://maps.app.goo.gl/vEpxr93MhWHrDB3Y9?g_st=ic",
+            copyright: "PORNPISIT BATTERY. All rights reserved.",
             footerBgColor: "#0a0a0a",
             footerTextColor: "#737373",
             footerAccentColor: "#dc2626",
@@ -191,8 +191,8 @@ export async function ensureBrandMigration() {
             heading: "แบตหมด? อย่ารอช้า —",
             headingSub: "โทรหาเราได้ทันที",
             description: "ช่างผู้เชี่ยวชาญออกนอกสถานที่ภายใน 30 นาที · บริการ 24 ชั่วโมง",
-            phone: "__PHONE__",
-            lineUrl: "__LINE_URL__",
+            phone: "0996731296",
+            lineUrl: "https://lin.ee/OBB86S4",
             badges: ["✓ ออกนอกสถานที่", "✓ แบตเตอรี่แท้", "✓ ราคาโปร่งใส"],
           }),
         });
@@ -208,34 +208,34 @@ export async function ensureBrandMigration() {
       for (const section of postsPage.sections) {
         if (section.type === "header") {
           const data = JSON.parse(section.content || "{}");
-          data.brandName = "__BRAND_NAME__";
-          data.phone = "__PHONE__";
-          data.lineUrl = "__LINE_URL__";
+          data.brandName = "PORNPISIT BATTERY";
+          data.phone = "0996731296";
+          data.lineUrl = "https://lin.ee/OBB86S4";
           await update(section.id, { content: JSON.stringify(data) });
         }
         if (section.type === "footer") {
           const data = JSON.parse(section.content || "{}");
-          data.brandName = "__BRAND_NAME__";
-          data.phone = "__PHONE__";
-          data.lineId = "__LINE_ID__";
-          data.lineUrl = "__LINE_URL__";
-          data.facebook = "__FACEBOOK_URL__";
-          data.googleMap = "__GOOGLE_MAP_URL__";
-          data.copyright = "__BRAND_NAME__. All rights reserved.";
+          data.brandName = "PORNPISIT BATTERY";
+          data.phone = "0996731296";
+          data.lineId = "@398kyxfq";
+          data.lineUrl = "https://lin.ee/OBB86S4";
+          data.facebook = "https://www.facebook.com/profile.php?id=61586430572682";
+          data.googleMap = "https://maps.app.goo.gl/vEpxr93MhWHrDB3Y9?g_st=ic";
+          data.copyright = "PORNPISIT BATTERY. All rights reserved.";
           data.area = "ห้วยขวาง ดินแดง ลาดพร้าว บางกะปิ บางเขน จตุจักร ดุสิต บางซื่อ";
           await update(section.id, { content: JSON.stringify(data) });
         }
         if (section.type === "contact") {
           const data = JSON.parse(section.content || "{}");
-          data.phone = "__PHONE__";
-          data.lineId = "__LINE_ID__";
-          data.lineUrl = "__LINE_URL__";
+          data.phone = "0996731296";
+          data.lineId = "@398kyxfq";
+          data.lineUrl = "https://lin.ee/OBB86S4";
           await update(section.id, { content: JSON.stringify(data) });
         }
       }
     }
 
-    console.log("[auto-migrate] DB updated to __BRAND_NAME__ successfully!");
+    console.log("[auto-migrate] DB updated to PORNPISIT BATTERY successfully!");
   } catch (e) {
     console.error("[auto-migrate] Error:", e);
     migrated = false; // Allow retry on next request

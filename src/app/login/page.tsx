@@ -46,7 +46,7 @@ export default function LoginPage() {
       <Card className="w-full max-w-md">
         <CardHeader className="space-y-1 text-center">
           <CardTitle className="text-2xl font-bold tracking-tight text-red-600">
-            __BRAND_NAME__ Admin
+            PORNPISIT BATTERY Admin
           </CardTitle>
           <CardDescription>
             เข้าสู่ระบบเพื่อจัดการข้อมูลเว็บไซต์
@@ -65,7 +65,7 @@ export default function LoginPage() {
               <Input
                 id="email"
                 type="email"
-                placeholder="admin@example.com"
+                placeholder="admin@pornpisitbattery.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required

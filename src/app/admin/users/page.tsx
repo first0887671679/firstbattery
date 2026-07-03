@@ -188,7 +188,7 @@ export default function UsersAdminPage() {
                 <Input
                   className="mt-1"
                   type="email"
-                  placeholder="admin@example.com"
+                  placeholder="admin@pornpisitbattery.com"
                   value={addEmail}
                   onChange={(e) => setAddEmail(e.target.value)}
                 />

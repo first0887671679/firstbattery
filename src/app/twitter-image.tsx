@@ -1,7 +1,7 @@
 ﻿import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "__BRAND_NAME__ - บริการดูแลรักษารถยนต์นอกสถานที่ 24 ชั่วโมง";
+export const alt = "PORNPISIT BATTERY - บริการดูแลรักษารถยนต์นอกสถานที่ 24 ชั่วโมง";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -79,7 +79,7 @@ export default function TwitterImage() {
               display: "flex",
             }}
           >
-            __BRAND_NAME__
+            PORNPISIT BATTERY
           </div>
 
           {/* Divider */}
@@ -163,7 +163,7 @@ export default function TwitterImage() {
               display: "flex",
             }}
           >
-            📞 __PHONE__
+            📞 0996731296
           </div>
           <div
             style={{
@@ -181,7 +181,7 @@ export default function TwitterImage() {
               display: "flex",
             }}
           >
-            https://example.com
+            pornpisitbattery.com
           </div>
         </div>
       </div>

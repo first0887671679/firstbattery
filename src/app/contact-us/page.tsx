@@ -8,8 +8,8 @@ export const revalidate = 60;
 export const dynamic = "force-dynamic";
 
 const SLUG = "contact-us";
-const FALLBACK_TITLE = `ติดต่อเรา | เปลี่ยนแบตเตอรี่นอกสถานที่ 24 ชม. ห้วยขวาง ดินแดง ลาดพร้าว | __BRAND_NAME__`;
-const FALLBACK_DESC = "ต้องการเปลี่ยนแบตเตอรี่ด่วน? โทร __PHONE__ บริการเปลี่ยนแบตเตอรี่รถยนต์นอกสถานที่ 24 ชม. โซนห้วยขวาง ดินแดง ลาดพร้าว บางกะปิ บางเขน จตุจักร ถึงไวใน 30 นาที";
+const FALLBACK_TITLE = `ติดต่อเรา | เปลี่ยนแบตเตอรี่นอกสถานที่ 24 ชม. ห้วยขวาง ดินแดง ลาดพร้าว | PORNPISIT BATTERY`;
+const FALLBACK_DESC = "ต้องการเปลี่ยนแบตเตอรี่ด่วน? โทร 0996731296 บริการเปลี่ยนแบตเตอรี่รถยนต์นอกสถานที่ 24 ชม. โซนห้วยขวาง ดินแดง ลาดพร้าว บางกะปิ บางเขน จตุจักร ถึงไวใน 30 นาที";
 
 export async function generateMetadata(): Promise<Metadata> {
   await ensureServicePages();
@@ -43,7 +43,7 @@ function generateContactPageJsonLd() {
     "@type": "AutoRepair",
     "@id": `${SITE_CONFIG.url}/#organization`,
     name: SITE_CONFIG.siteName,
-    alternateName: "__BRAND_NAME__ Service",
+    alternateName: "PORNPISIT BATTERY Service",
     image: SITE_CONFIG.logo,
     logo: {
       "@type": "ImageObject",

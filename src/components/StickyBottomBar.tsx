@@ -13,9 +13,9 @@ interface StickyBottomBarProps {
 }
 
 export default function StickyBottomBar({
-  phone = "__PHONE__",
+  phone = "0996731296",
   phoneLabel = "โทรเรียกช่าง",
-  lineUrl = "__LINE_URL__",
+  lineUrl = "https://lin.ee/OBB86S4",
   lineLabel = "แอดไลน์",
 }: StickyBottomBarProps) {
   return (

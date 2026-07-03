@@ -22,7 +22,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-3">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
-          <span className="text-3xl font-extrabold text-red-600">__BRAND_NAME__</span>
+          <span className="text-3xl font-extrabold text-red-600">PORNPISIT BATTERY</span>
           <span className="hidden sm:inline text-base text-gray-500 font-medium">บริการแบตเตอรี่ 24 ชม.</span>
         </Link>
 
@@ -42,13 +42,13 @@ export default function Navbar() {
         {/* Desktop CTA */}
         <div className="hidden md:flex items-center gap-3">
           <Button size="sm" className="bg-red-600 hover:bg-red-700 text-white" asChild>
-            <Link href="tel:__PHONE__" onClick={trackPhoneClick}>
+            <Link href="tel:0996731296" onClick={trackPhoneClick}>
               <PhoneCall className="mr-1 w-4 h-4" />
               โทรด่วน
             </Link>
           </Button>
           <Button size="sm" className="bg-[#00B900] hover:bg-[#009900] text-white" asChild>
-            <Link href="__LINE_URL__" target="_blank" rel="noopener noreferrer" onClick={trackLineClick}>
+            <Link href="https://lin.ee/OBB86S4" target="_blank" rel="noopener noreferrer" onClick={trackLineClick}>
               <MessageCircle className="mr-1 w-4 h-4" />
               Line
             </Link>

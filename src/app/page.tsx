@@ -22,8 +22,8 @@ export const revalidate = 60;
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "__BRAND_NAME__ | เปลี่ยนแบตเตอรี่รถยนต์นอกสถานที่ 24 ชม.",
-  description: "บริการเปลี่ยนแบตเตอรี่รถยนต์นอกสถานที่ 24 ชั่วโมง ถึงที่ภายใน 30 นาที ห้วยขวาง ดินแดง ลาดพร้าว บางกะปิ บางเขน จตุจักร ดุสิต บางซื่อ โทรเลย __PHONE__",
+  title: "PORNPISIT BATTERY | เปลี่ยนแบตเตอรี่รถยนต์นอกสถานที่ 24 ชม.",
+  description: "บริการเปลี่ยนแบตเตอรี่รถยนต์นอกสถานที่ 24 ชั่วโมง ถึงที่ภายใน 30 นาที ห้วยขวาง ดินแดง ลาดพร้าว บางกะปิ บางเขน จตุจักร ดุสิต บางซื่อ โทรเลย 0996731296",
   alternates: { canonical: "/" },
 };
 
@@ -102,15 +102,15 @@ export default async function Home() {
   const contactData     = contactSection ? parseJson(contactSection.content) : {};
 
   // ── Fallback values ─────────────────────────────────────────────────────────
-  const phone   = contactData.phone   || "__PHONE__";
-  const lineId  = contactData.lineId  || "__LINE_ID__";
-  const lineUrl = contactData.lineUrl || "__LINE_URL__";
+  const phone   = contactData.phone   || "0996731296";
+  const lineId  = contactData.lineId  || "@398kyxfq";
+  const lineUrl = contactData.lineUrl || "https://lin.ee/OBB86S4";
 
   const heroHeading     = heroData.heading     || "แบตหมด?";
   const heroSubheading  = heroData.subheading  || "เราถึงที่คุณใน 30 นาที";
   const heroDescription = heroData.description || "บริการเปลี่ยนแบตเตอรี่รถยนต์นอกสถานที่ 24 ชั่วโมง\nช่างผู้เชี่ยวชาญพร้อมออกให้บริการทันที";
-  const heroPhoneUrl    = heroData.phoneUrl    || "tel:__PHONE__";
-  const heroLineUrl     = heroData.lineUrl     || "__LINE_URL__";
+  const heroPhoneUrl    = heroData.phoneUrl    || "tel:0996731296";
+  const heroLineUrl     = heroData.lineUrl     || "https://lin.ee/OBB86S4";
   const heroImage       = heroSection?.imageUrl || "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?q=80&w=1920&auto=format&fit=crop";
 
   // ── JSON-LD ─────────────────────────────────────────────────────────────────

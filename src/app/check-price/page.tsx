@@ -4,7 +4,7 @@ import BatteryChecker from "@/components/BatteryChecker";
 import Link from "next/link";
 import { PhoneCall, MessageCircle, Clock, Shield, Zap, Award, Search, MapPin, Facebook, Map } from "lucide-react";
 
-const PAGE_TITLE = "เช็ครุ่นแบตเตอรี่รถยนต์ ค้นหาแบตเตอรี่ที่เหมาะสมตามรุ่นรถ | __BRAND_NAME__";
+const PAGE_TITLE = "เช็ครุ่นแบตเตอรี่รถยนต์ ค้นหาแบตเตอรี่ที่เหมาะสมตามรุ่นรถ | PORNPISIT BATTERY";
 const PAGE_DESC =
   "เช็ครุ่นแบตเตอรี่รถยนต์ที่เหมาะสมสำหรับรถคุณ ทุกยี่ห้อ Toyota Honda Mazda Nissan พร้อมสเปก แอมป์ CCA และขั้วแบตเตอรี่ บริการเปลี่ยนถึงที่ 24 ชม. ห้วยขวาง ดินแดง ลาดพร้าว บางกะปิ บางเขน จตุจักร ดุสิต บางซื่อ";
 
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
         url: SITE_CONFIG.ogImage,
         width: 1200,
         height: 630,
-        alt: "เช็ครุ่นแบตเตอรี่รถยนต์ - __BRAND_NAME__",
+        alt: "เช็ครุ่นแบตเตอรี่รถยนต์ - PORNPISIT BATTERY",
       },
     ],
   },
@@ -193,11 +193,11 @@ export default function CheckPricePage() {
               ติดต่อเรา
             </h2>
             <p className="text-slate-500 text-sm text-center mb-8">
-              __BRAND_NAME__ พร้อมให้บริการเปลี่ยนแบตเตอรี่ถึงที่ 24 ชั่วโมง
+              PORNPISIT BATTERY พร้อมให้บริการเปลี่ยนแบตเตอรี่ถึงที่ 24 ชั่วโมง
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <Link
-                href="tel:__PHONE__"
+                href="tel:0996731296"
                 className="flex items-center gap-4 bg-slate-50 hover:bg-red-50 border border-slate-200 hover:border-red-200 rounded-xl p-5 transition-all group"
               >
                 <div className="w-12 h-12 bg-red-100 group-hover:bg-red-200 rounded-xl flex items-center justify-center flex-shrink-0 transition-colors">
@@ -205,11 +205,11 @@ export default function CheckPricePage() {
                 </div>
                 <div>
                   <div className="font-bold text-slate-900 text-sm">โทรศัพท์</div>
-                  <div className="text-red-600 font-semibold">__PHONE__</div>
+                  <div className="text-red-600 font-semibold">0996731296</div>
                 </div>
               </Link>
               <Link
-                href="__LINE_URL__"
+                href="https://lin.ee/OBB86S4"
                 target="_blank"
                 className="flex items-center gap-4 bg-slate-50 hover:bg-green-50 border border-slate-200 hover:border-green-200 rounded-xl p-5 transition-all group"
               >
@@ -218,11 +218,11 @@ export default function CheckPricePage() {
                 </div>
                 <div>
                   <div className="font-bold text-slate-900 text-sm">LINE</div>
-                  <div className="text-[#00B900] font-semibold">__LINE_ID__</div>
+                  <div className="text-[#00B900] font-semibold">@398kyxfq</div>
                 </div>
               </Link>
               <Link
-                href="__FACEBOOK_URL__"
+                href="https://www.facebook.com/profile.php?id=61586430572682"
                 target="_blank"
                 className="flex items-center gap-4 bg-slate-50 hover:bg-blue-50 border border-slate-200 hover:border-blue-200 rounded-xl p-5 transition-all group"
               >
@@ -231,11 +231,11 @@ export default function CheckPricePage() {
                 </div>
                 <div>
                   <div className="font-bold text-slate-900 text-sm">Facebook</div>
-                  <div className="text-[#1877F2] font-semibold">__BRAND_NAME__</div>
+                  <div className="text-[#1877F2] font-semibold">PORNPISIT BATTERY</div>
                 </div>
               </Link>
               <Link
-                href="__GOOGLE_MAP_URL__"
+                href="https://maps.app.goo.gl/vEpxr93MhWHrDB3Y9?g_st=ic"
                 target="_blank"
                 className="flex items-center gap-4 bg-slate-50 hover:bg-red-50 border border-slate-200 hover:border-red-200 rounded-xl p-5 transition-all group"
               >
