@@ -1,10 +1,10 @@
-// Prisma schema for local development (SQLite)
+// Prisma schema for production (PostgreSQL via Neon)
 generator client {
   provider = "prisma-client-js"
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
